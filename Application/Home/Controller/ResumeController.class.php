@@ -12,11 +12,11 @@ use Home\Common;
 use Home\Controller\Base;
 
 class ResumeController extends BaseController{
-    //��ְ�߸��˼�����ҳ
+    //简历首页
     public function index()
     {
         if(empty($_SESSION['user_id'])){
-            $this->ajaxReturn("Resume","���ȵ�¼",false);
+            $this->ajaxReturn("Resume","请先登录",false);
         }
         $map = array();
         $map['user_id'] = $_SESSION['user_id'];
@@ -26,11 +26,11 @@ class ResumeController extends BaseController{
         $this->display();
     }
 
-    //��ְ���������˼���
+    //新增简历
     public function add(){
         session_start();
         if(empty($_SESSION['user_id'])){
-            $this->ajaxReturn("Resume","���ȵ�¼",false);
+            $this->ajaxReturn("Resume","请先登录",false);
         }
         $data = array();
         $data['user_id'] = $_SESSION['user_id'];
@@ -49,17 +49,17 @@ class ResumeController extends BaseController{
         $result =  $Resume->add($data);
         if(!empty($result)){
             $_SESSION['resume_id'] = $result;
-            $this->ajaxReturn("login","��¼�ɹ�",true);
+            $this->ajaxReturn("login","保存成功",true);
         }else{
-            $this->ajaxReturn("login","��¼ʧ��",true);
+            $this->ajaxReturn("login","保存失败",true);
         }
     }
 
-    //��ְ���������˼���
+    //编辑简历
     public function edit(){
         session_start();
         if(empty($_SESSION['user_id'])){
-            $this->ajaxReturn("Resume","���ȵ�¼",false);
+            $this->ajaxReturn("Resume","请先登录",false);
         }
         $data = array();
         $data['name'] = I('post.name');
@@ -78,9 +78,9 @@ class ResumeController extends BaseController{
         $Resume = M('Resume');
         $result = $Resume->where($map)->save($data);
         if(false !== $result || 0 !== $result){
-            $this->ajaxReturn("Resume","�����޸ĳɹ�",false);
+            $this->ajaxReturn("Resume","编辑成功",false);
         }else{
-            $this->ajaxReturn("Resume","�����޸�ʧ��",false);
+            $this->ajaxReturn("Resume","编辑失败",false);
         }
     }
 }

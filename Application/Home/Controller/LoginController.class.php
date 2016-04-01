@@ -12,17 +12,17 @@ use Home\Common;
 use Home\Controller\Base;
 
 class LoginController extends BaseController{
-    //��¼ҳ��ҳ
+    //登录首页
     public function index(){
         $this->display();
     }
 
-    //��¼����
+    //登录操作
     public function login(){
         session_start();
         $verify = I('post.Verify');
         if(check_verify($verify)){
-            $this->ajaxReturn("Verify","��֤�����",false);
+            $this->ajaxReturn("Verify","验证码错误，请重新登录",false);
         }
         $map = array();
         $map['username'] = I('post.username');
@@ -31,9 +31,10 @@ class LoginController extends BaseController{
         $result =  $Users->where($map)->find();
         if(!empty($result)){
             $_SESSION['user_id'] = $result['user_id'];
-            $this->ajaxReturn("login","��¼�ɹ�",true);
+            $_SESSION['role'] = $result['role'];
+            $this->ajaxReturn("login","登录成功",true);
         }else{
-            $this->ajaxReturn("login","��¼ʧ��",true);
+            $this->ajaxReturn("login","登录失败",true);
         }
         $this->display();
     }
