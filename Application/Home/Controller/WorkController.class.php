@@ -149,12 +149,15 @@ class WorkController extends BaseController{
             $this->ajaxReturn("Work","请先登录",false);
         }
         if($_SESSION['role'] !== 2 ){
-            $this->ajaxReturn("Work","对不起，您没有权限进入该页面",false);
+            $this->ajaxReturn("Work","对不起，您没有权限进入该页",false);
         }
         $map = array();
         $map['cb_submit.work_id'] = I('post.work_id');
         $SubmitDao = M('Submit');
         $list = $SubmitDao->where($map)->join('cb_user on cb_submit.resume_id = cb_user.resume_id')->select();
+        $data = array();
+        $data['is_see'] = 1;
+        $result = M('Submit')->save($data);//查看简历
         $this->assign('list',$list);
         $this->display();
     }

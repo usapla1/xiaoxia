@@ -12,7 +12,7 @@ use Home\Common;
 use Home\Controller\Base;
 
 class ResumeController extends BaseController{
-    //简历首页
+    //个人简历首页
     public function index()
     {
         if(empty($_SESSION['user_id'])){

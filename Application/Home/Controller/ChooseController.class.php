@@ -15,7 +15,7 @@ class ChooseController extends BaseController{
     //选择简历列表
     public function index()
     {
-/*        if(empty($_SESSION['user_id'])){
+       if(empty($_SESSION['user_id'])){
             $this->ajaxReturn("Work","请先登录",false);
         }
         if($_SESSION['role'] !== 2 ){
@@ -23,7 +23,7 @@ class ChooseController extends BaseController{
         }
         $ResumeDao = M('Resume');
         $list = $ResumeDao->order('cb_resume.creat_time','DESC')->select();
-        $this->assign('list', $list);*/
+        $this->assign('list', $list);
         $this->display();
     }
     //选择简历
@@ -54,25 +54,8 @@ class ChooseController extends BaseController{
         $this->display();
     }
 
-    //简历汇总  导出简历
-    public function excelResume(){
-        if(empty($_SESSION['user_id'])){
-            $this->ajaxReturn("Work","请先登录",false);
-        }
-        if($_SESSION['role'] !== 2 ){
-            $this->ajaxReturn("Work","对不起，您没有权限进入该页面",false);
-        }
-
-/*        $netbar_name = $_SESSION['user_id'];
-        $fields = array("奖品名称","市场价","所属分类","图片");//要导出的列
-        $file_name = $netbar_name."_奖品资料库_".date("Ymd");
-        $data  = array("奖品名称","市场价","所属分类","图片");//要导出的数据
-        $this->export($data,$fields,$file_name,"奖品资料");
-        //parent::export($data,$fields,$file_name,"奖品资料");
-        exit();*/
-    }
-
-    /**
+    //
+    /**简历汇总  导出简历
      *
      * 导出Excel
      */
