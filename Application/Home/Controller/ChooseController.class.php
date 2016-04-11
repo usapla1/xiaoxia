@@ -73,6 +73,7 @@ class ChooseController extends BaseController{
             array('id'=>1,'truename'=>33 , 'sex'=>1 ),
             array('id'=>2,'truename'=>34 , 'sex'=>5 ),
         );
+
         foreach ($xlsData as $k => $v)
         {
             $xlsData[$k]['sex']=$v['sex']==1?'男':'女';

@@ -16,7 +16,7 @@ class SeekerController extends BaseController{
     public function index()
     {
         if(empty($_SESSION['user_id'])){
-            $this->ajaxReturn("Seeker","���ȵ�¼",false);
+            $this->ajaxReturn("Seeker","请先登录",false);
         }
         $map = array();
         $map['user_id'] = $_SESSION['user_id'];
@@ -30,7 +30,7 @@ class SeekerController extends BaseController{
     public function edit()
     {
         if(empty($_SESSION['user_id'])){
-            $this->ajaxReturn("Seeker","���ȵ�¼",false);
+            $this->ajaxReturn("Seeker","请先登录",false);
         }
         $map = array();
         $map['user_id'] = $_SESSION['user_id'];
