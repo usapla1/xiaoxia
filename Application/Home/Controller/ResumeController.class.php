@@ -20,9 +20,12 @@ class ResumeController extends BaseController{
         }
         $map = array();
         $map['user_id'] = $_SESSION['user_id'];
-        $Resume = M('Resume');
-        $list =  $Resume->where($map)->find();
-        $this->assign('list',$list);
+        $ResumeDao = M('Resume');
+        $UserDao = M('Users');
+        $list1 =  $ResumeDao->where($map)->find();
+        $list2 =  $UserDao->where($map)->find();
+        $this->assign('list1',$list1);
+        $this->assign('list2',$list2);
         $this->display();
     }
 
