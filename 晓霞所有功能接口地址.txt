@@ -6,6 +6,7 @@
 求职者的注册，求职者的登录，企业用户的登录，
 
 已完成接口
+网页入口“http://127.0.0.1/newfish/index.php/Home/Index/index
 首页:Index/index
 简历投递:Index/submitResume
 注册首页:Register/index

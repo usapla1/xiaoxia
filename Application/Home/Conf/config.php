@@ -29,5 +29,5 @@ return array(
     'MAIL_CHARSET' =>'utf-8',//设置邮件编码
     'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
 
-    'Base_Url'                   => '/Public/',
+    'Base_Url'                   => 'http://127.0.0.1/newfish/Public/',
 );

@@ -6,14 +6,15 @@ use Home\Controller\Base;
 class IndexController extends BaseController{
     //主页
     public function index(){
-        $Users = M('users');
+        $this->display();
+/*        $Users = M('users');
         $Works = M('work');
         $lists1 = $Users->select();
         $lists2 = $Works->select();
         $lists=array();
         $lists[] = $lists1;
         $lists[] = $lists2;
-        $this->ajaxReturn($lists,0,array());
+        $this->ajaxReturn($lists,0,array());*/
     }
 
     //投递简历

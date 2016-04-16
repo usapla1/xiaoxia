@@ -17,19 +17,25 @@ class RegisterController extends BaseController{
 			$this->error("亲，验证码输错了哦！",$this->site_url,9);
 		}
 		$data = array();
-		$data['user'] = I('post.user');
+		$data['email'] = I('post.email');
+		$data['telphone'] = I('post.telphone');
+		$data['username'] = I('post.username');
+		$data['userdata'] = I('post.userdata');
 		$data['password'] = I('post.password');
 		$data['repassword'] = I('post.repassword');
 		$data['Verify'] = I('post.Verify');
 		if($data['password'] != $data['repassword']){
-			$this->ajaxReturn("repassword","重复密码不一致",false);
+			$this->error("亲，重复密码不一致");
+			//$this->ajaxReturn("repassword","重复密码不一致",false);
 		}
 		$Users = M('Users');
 		$result =  $Users->add($data);
 		if(!empty($result)){
-			$this->ajaxReturn("register","注册成功",true);
+			$this->success("注册成功","/User/index");
+			//$this->ajaxReturn("register","注册成功",true);
 		}else{
-			$this->ajaxReturn("register","注册失败",true);
+			$this->error("亲，注册失败");
+			//$this->ajaxReturn("register","注册失败",true);
 		}
 	}
 

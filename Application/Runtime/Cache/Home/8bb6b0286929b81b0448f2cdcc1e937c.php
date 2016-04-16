@@ -1,7 +1,7 @@
-<!DOCTYPE HTML>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
 <html>
 <head>
-	<script id="allmobilize" charset="utf-8" src="{:C('Base_Url')}js/allmobilize.min.js"></script>
+	<script id="allmobilize" charset="utf-8" src="<?php echo C('Base_Url');?>js/allmobilize.min.js"></script>
 	<meta http-equiv="Cache-Control" content="no-siteapp" />
 	<link rel="alternate" media="handheld"  />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -15,30 +15,30 @@
 		var ctx = "h";
 		console.log(1);
 	</script>
-	<link rel="Shortcut Icon" href="{:C('Base_Url')}h/images/favicon.ico">
-	<link rel="stylesheet" type="text/css" href="{:C('Base_Url')}css/style.css" />
+	<link rel="Shortcut Icon" href="<?php echo C('Base_Url');?>h/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="<?php echo C('Base_Url');?>css/style.css" />
 
 	<script src="js/jquery.1.10.1.min.js" type="text/javascript"></script>
 
-	<script type="text/javascript" src="{:C('Base_Url')}js/jquery.lib.min.js"></script>
-	<script type="text/javascript" src="{:C('Base_Url')}js/core.min.js"></script>
+	<script type="text/javascript" src="<?php echo C('Base_Url');?>js/jquery.lib.min.js"></script>
+	<script type="text/javascript" src="<?php echo C('Base_Url');?>js/core.min.js"></script>
 
 
 	<script type="text/javascript">
 		var youdao_conv_id = 271546;
 	</script>
-	<script type="text/javascript" src="{:C('Base_Url')}js/conv.js"></script>
+	<script type="text/javascript" src="<?php echo C('Base_Url');?>js/conv.js"></script>
 </head>
 
 <body id="login_bg">
 <div class="login_wrapper">
 	<div class="login_header">
-		<a href="index.html"><img src="{:C('Base_Url')}images/logo.png" width="285" height="62" alt="新安招聘" /></a>
+		<a href="index.html"><img src="<?php echo C('Base_Url');?>images/logo.png" width="285" height="62" alt="新安招聘" /></a>
 	</div>
 
 	<input type="hidden" id="resubmitToken" value="9b207beb1e014a93bc852b7ba450db27" />
 	<div class="login_box">
-		<form id="loginForm" action="{:U('Register/register')}" method="post">
+		<form id="loginForm" action="<?php echo U('Register/register');?>" method="post">
 			<input type="text" id="email" name="user" tabindex="1" placeholder="请输入常用邮箱地址" />
 			<span class="error" style="display:none;" id="beError"></span>
 			<input type="text" id="name" name="username" placeholder="请输入自己的真实姓名" />
@@ -47,7 +47,7 @@
 			<input type="password" id="password" name="password" tabindex="2" placeholder="请输入密码" />
 			<input type="password" id="password1" name="password1" tabindex="3" placeholder="请确认密码" />
 			<input type="text" name="Verify" id="verify" tabindex="4" placeholder="请输入验证码">
-			<img alt="验证码" src="{:U('Home/Register/verify_c',array())}" title="点击刷新"> <br/>
+			<img alt="验证码" src="<?php echo U('Home/Register/verify_c',array());?>" title="点击刷新"> <br/>
 			<label class="fl registerJianJu" for="checkbox">
 				<input type="checkbox" id="checkbox" name="checkbox" checked  class="checkbox valid" />我已阅读并同意<a href="h/privacy.html" target="_blank">《用户协议》</a>
 			</label>
