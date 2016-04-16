@@ -43,8 +43,7 @@ var youdao_conv_id = 271546;
             <ul id="navheader" class="reset">
                 <li><a href="index.html">首页</a></li>
                 <li><a href="enterprise.html">公司</a></li>
-                <li><a rel="nofollow" href="positions.html">简历管理</a></li>
-                <li><a rel="nofollow" href="create.html">发布职位</a></li>
+                <li class="current"><a rel="nofollow" href="create.html">个人中心</a></li>
             </ul>
             <dl class="collapsible_menu">
                 <dt>
@@ -52,24 +51,31 @@ var youdao_conv_id = 271546;
                     <span class="red dn" id="noticeDot-1"></span>
                     <i></i>
                 </dt>
-                                    <dd style="display: none;"><a href="positions.html">我发布的职位</a></dd>
+                    <dd style="display: none;"><a href="positions.html">我发布的职位</a></dd>
                     <dd style="display: none;"><a href="positions.html">我收到的简历</a></dd>
                     <dd class="btm" style="display: none;"><a href="enterprise.html">我的公司主页</a></dd>
                     <dd style="display: none;"><a href="index.html">我要找工作</a></dd>
-                                                <dd style="display: none;"><a href="accountBind.html">帐号设置</a></dd>
-                                <dd class="logout" style="display: none;"><a rel="nofollow" href="login.html">退出</a></dd>
+                    <dd style="display: none;"><a href="accountBind.html">帐号设置</a></dd>
+                    <dd class="logout" style="display: none;"><a rel="nofollow" href="login.html">退出</a></dd>
             </dl>
                                 </div>
     </div><!-- end #header -->
     <div id="container">
-        	<div class="user_bindSidebar">
-    <dl id="user_sideBarmenu" class="user_sideBarmenu">
-     	        <dt><h3>帐号设置</h3></dt>
-                <dd><a href="accountBind.html">帐号绑定</a></dd>
-        <dd><a class="hover" href="updatePwd.html">修改密码</a></dd>
+        <div class="sidebar">
+            <dl class="company_center_aside">
+                <dt><h3>个人中心</h3></dt>
+                <dd><a href="personal.html">个人信息</a></dd>
+                <dd><a href="Individual.html">我的简历</a></dd>
+                <dd><a href="Application.html">申请记录</a></dd>
+                <dd><a href="feedback.html">人事反馈</a></dd>
             </dl>
-</div>
-<input type="hidden" id="hasSidebar" value="1">	<div class="content user_modifyContent">
+            <dl class="company_center_aside">
+                <dt><h3>帐号设置</h3></dt>
+                <dd><a href="accountBind.html">帐号绑定</a></dd>
+                <dd><a class="hover" href="updatePwd.html">修改密码</a></dd>
+            </dl>
+        </div><!-- end .sidebar -->
+        <input type="hidden" id="hasSidebar" value="1">	<div class="content user_modifyContent">
         <dl class="c_section">
             <dt>
             	<h2><em></em>修改密码</h2>
