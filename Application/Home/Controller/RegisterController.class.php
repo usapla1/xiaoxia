@@ -14,13 +14,31 @@ class RegisterController extends BaseController{
 	public function register(){
 		$verify = I('post.Verify');
 		if($this->check_verify($verify)){
-			$this->error("亲，验证码输错了哦！",$this->site_url,9);
+			$this->error("亲，验证码输错了哦！");
+		}
+		if(empty(I('post.email'))){
+			$this->error("亲，请输入登录邮箱！");
+		}
+		if(empty(I('post.telphone'))){
+			$this->error("亲，请输入手机号！");
+		}
+		if(empty(I('post.username'))){
+			$this->error("亲，请输入真实姓名！");
+		}
+		if(empty(I('post.password'))){
+			$this->error("亲，请输入密码！");
+		}
+		if(empty(I('post.repassword'))){
+			$this->error("亲，请输入重复密码！");
+		}
+		if(empty(I('post.Verify'))){
+			$this->error("亲，请输入验证码！");
 		}
 		$data = array();
 		$data['email'] = I('post.email');
 		$data['telphone'] = I('post.telphone');
 		$data['username'] = I('post.username');
-		$data['userdata'] = I('post.userdata');
+		$data['userdata'] = I('post.user_data');
 		$data['password'] = I('post.password');
 		$data['repassword'] = I('post.repassword');
 		$data['Verify'] = I('post.Verify');
@@ -29,9 +47,27 @@ class RegisterController extends BaseController{
 			//$this->ajaxReturn("repassword","重复密码不一致",false);
 		}
 		$Users = M('Users');
+		$map = array();
+		$map['email'] = $data['email'];
+		$result1 =  $Users->where($map)->find();
+		if(!empty($result1)){
+			$this->error("亲，注册失败,账号已经存在");
+			//$this->ajaxReturn("register","注册成功",true);
+		}
 		$result =  $Users->add($data);
 		if(!empty($result)){
-			$this->success("注册成功","/User/index");
+			$data = array();
+			$data['email'] = I('post.email');
+			$data['telphone'] = I('post.telphone');
+			$data['username'] = I('post.username');
+			$data['userid'] = $result;
+			$ResumeDao = M('Resume');
+			$result1 =  $ResumeDao->add($data);
+			if(!empty($result1)){
+				$this->success("注册成功","http://127.0.0.1/newfish/index.php");
+			}else{
+				$this->error("亲，简历初始化失败");
+			}
 			//$this->ajaxReturn("register","注册成功",true);
 		}else{
 			$this->error("亲，注册失败");

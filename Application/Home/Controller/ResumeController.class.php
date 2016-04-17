@@ -15,47 +15,15 @@ class ResumeController extends BaseController{
     //个人简历首页
     public function index()
     {
-        if(empty($_SESSION['user_id'])){
-            $this->ajaxReturn("Resume","请先登录",false);
+        if(empty($_SESSION['userid'])){
+            $this->error("对不起，请先登录","http://127.0.0.1/newfish/index.php/Home/Login/index");
         }
         $map = array();
-        $map['user_id'] = $_SESSION['user_id'];
+        $map['userid'] = $_SESSION['userid'];
         $ResumeDao = M('Resume');
-        $UserDao = M('Users');
-        $list1 =  $ResumeDao->where($map)->find();
-        $list2 =  $UserDao->where($map)->find();
-        $this->assign('list1',$list1);
-        $this->assign('list2',$list2);
+        $list =  $ResumeDao->where($map)->find();
+        $this->assign('list',$list);
         $this->display();
-    }
-
-    //新增简历
-    public function add(){
-        session_start();
-        if(empty($_SESSION['user_id'])){
-            $this->ajaxReturn("Resume","请先登录",false);
-        }
-        $data = array();
-        $data['user_id'] = $_SESSION['user_id'];
-        $data['name'] = I('post.name');
-        $data['sex'] = I('post.sex');
-        $data['degree'] = I('post.degree');
-        $data['email'] = I('post.email');
-        $data['telphone'] = I('post.telphone');
-        $data['hopework'] = I('post.hopework');
-        $data['edu'] = I('post.edu');
-        $data['working'] = I('post.working');
-        $data['reward'] = I('post.reward');
-        $data['sckill'] = I('post.sckill');
-        $data['self'] = I('post.self');
-        $Resume = M('Resume');
-        $result =  $Resume->add($data);
-        if(!empty($result)){
-            $_SESSION['resume_id'] = $result;
-            $this->ajaxReturn("login","保存成功",true);
-        }else{
-            $this->ajaxReturn("login","保存失败",true);
-        }
     }
 
     //编辑简历
@@ -65,25 +33,29 @@ class ResumeController extends BaseController{
             $this->ajaxReturn("Resume","请先登录",false);
         }
         $data = array();
-        $data['name'] = I('post.name');
         $data['sex'] = I('post.sex');
-        $data['degree'] = I('post.degree');
-        $data['email'] = I('post.email');
+        $data['mingzhu'] = I('post.mingzhu');
+        $data['hunyin'] = I('post.hunyin');
+        $data['shenfen'] = I('post.shenfen');
+        $data['jiguan'] = I('post.jiguan');
+        $data['adress'] = I('post.adress');
         $data['telphone'] = I('post.telphone');
-        $data['hopework'] = I('post.hopework');
+        $data['username'] = I('post.name');
+        $data['email'] = I('post.email');
         $data['edu'] = I('post.edu');
-        $data['working'] = I('post.working');
+        $data['work'] = I('post.work');
         $data['reward'] = I('post.reward');
-        $data['sckill'] = I('post.sckill');
-        $data['self'] = I('post.self');
+        $data['skill'] = I('post.skill');
+        $data['selftalk'] = I('post.selftalk');
+        $data['hopework'] = I('post.hopework');
         $map = array();
-        $map['user_id'] = $_SESSION['user_id'];
+        $map['userid'] = $_SESSION['userid'];
         $Resume = M('Resume');
         $result = $Resume->where($map)->save($data);
         if(false !== $result || 0 !== $result){
-            $this->ajaxReturn("Resume","编辑成功",false);
+            $this->success("亲，编辑成功");
         }else{
-            $this->ajaxReturn("Resume","编辑失败",false);
+            $this->error("亲，编辑失败");
         }
     }
 }

@@ -1,7 +1,7 @@
-<!DOCTYPE HTML>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
-	</script><script type="text/javascript" async="" src="{:C('Base_Url')}js/conversion.js"></script>
-	<script src="{:C('Base_Url')}js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
+	</script><script type="text/javascript" async="" src="<?php echo C('Base_Url');?>js/conversion.js"></script>
+	<script src="<?php echo C('Base_Url');?>js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script><style type="text/css"></style>
 	<meta content="no-siteapp" http-equiv="Cache-Control">
 	<link  media="handheld" rel="alternate">
 	<!-- end 云适配 -->
@@ -17,32 +17,32 @@
 		var ctx = "http://www.lagou.com";
 		console.log(1);
 	</script>
-	<link href="{:C('Base_Url')}/images/favicon.ico" rel="Shortcut Icon">
-	<link href="{:C('Base_Url')}css/style.css" type="text/css" rel="stylesheet">
-	<link href="{:C('Base_Url')}css/external.min.css" type="text/css" rel="stylesheet">
-	<link href="{:C('Base_Url')}css/popup.css" type="text/css" rel="stylesheet">
-	<script type="text/javascript" src="{:C('Base_Url')}js/jquery.1.10.1.min.js"></script>
-	<script src="{:C('Base_Url')}js/jquery.lib.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="{:C('Base_Url')}js/ajaxfileupload.js"></script>
-	<script src="{:C('Base_Url')}js/additional-methods.js" type="text/javascript"></script>
+	<link href="<?php echo C('Base_Url');?>/images/favicon.ico" rel="Shortcut Icon">
+	<link href="<?php echo C('Base_Url');?>css/style.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo C('Base_Url');?>css/external.min.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo C('Base_Url');?>css/popup.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="<?php echo C('Base_Url');?>js/jquery.1.10.1.min.js"></script>
+	<script src="<?php echo C('Base_Url');?>js/jquery.lib.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="<?php echo C('Base_Url');?>js/ajaxfileupload.js"></script>
+	<script src="<?php echo C('Base_Url');?>js/additional-methods.js" type="text/javascript"></script>
 	<!--[if lte IE 8]>
-	<script type="text/javascript" src="{:C('Base_Url')}js/excanvas.js"></script>
+	<script type="text/javascript" src="<?php echo C('Base_Url');?>js/excanvas.js"></script>
 	<![endif]-->
 	<script type="text/javascript">
 		var youdao_conv_id = 271546;
 	</script>
-	<script src="{:C('Base_Url')}js/conv.js" type="text/javascript"></script>
-	<script src="{:C('Base_Url')}js/ajaxCross.json" charset="UTF-8"></script>
+	<script src="<?php echo C('Base_Url');?>js/conv.js" type="text/javascript"></script>
+	<script src="<?php echo C('Base_Url');?>js/ajaxCross.json" charset="UTF-8"></script>
 	<style type="text/css">
 
 	</style>
-	<link rel="stylesheet" href="{:C('Base_Url')}css/ui.css"><link rel="stylesheet" href="{:C('Base_Url')}css/window.css"></head>
+	<link rel="stylesheet" href="<?php echo C('Base_Url');?>css/ui.css"><link rel="stylesheet" href="<?php echo C('Base_Url');?>css/window.css"></head>
 <body>
 <div id="body">
 	<div id="header">
 		<div class="wrapper">
 			<a class="logo" href="index.html">
-				<img width="229" height="43" alt="新安招聘" src="{:C('Base_Url')}images/logo.png">
+				<img width="229" height="43" alt="新安招聘" src="<?php echo C('Base_Url');?>images/logo.png">
 			</a>
 			<ul id="navheader" class="reset">
 				<li><a href="index.html">首页</a></li>
@@ -87,7 +87,7 @@
 				</dt>
 				<dd>
 					<!--表单提交简历-->
-					<form action="{:U('Resume/edit')}" method="post" id="jobForm">
+					<form action="<?php echo U('Resume/edit');?>" method="post" id="jobForm">
 						<input type="hidden" value="" name="id">
 						<input type="hidden" value="create" name="preview">
 						<input type="hidden" value="25927" name="companyId">
@@ -97,63 +97,63 @@
 								<td width="25"><span class="redstar">*</span></td>
 								<td>姓名</td>
 								<td>
-									<input type="text" placeholder="请输入姓名，如：新安" value="{$list.username}" name="name" id="tName" readonly>
+									<input type="text" placeholder="请输入姓名，如：新安" value="<?php echo ($list["username"]); ?>" name="name" id="tName" readonly>
 								</td>
 							</tr>
 							<tr>
 								<td><span class="redstar">*</span></td>
 								<td>性别</td>
 								<td>
-									<input type="text" placeholder="请输入性别，如：男" value="{$list.sex}" name="sex" id="sex">
+									<input type="text" placeholder="请输入性别，如：男" value="<?php echo ($list["sex"]); ?>" name="sex" id="sex">
 								</td>
 							</tr>
 							<tr>
 								<td><span class="redstar">*</span></td>
 								<td>民族</td>
 								<td>
-									<input type="text" placeholder="请输入民族，如：汉族" value="{$list.hunyin}" name="mingzhu" id="nation">
+									<input type="text" placeholder="请输入民族，如：汉族" value="<?php echo ($list["hunyin"]); ?>" name="mingzhu" id="nation">
 								</td>
 							</tr>
 							<tr>
 								<td><span class="redstar">*</span></td>
 								<td>婚否</td>
 								<td>
-									<input type="text" placeholder="未婚/已婚" value="{$list.hunyin}" name="hunyin" id="married">
+									<input type="text" placeholder="未婚/已婚" value="<?php echo ($list["hunyin"]); ?>" name="hunyin" id="married">
 								</td>
 							</tr>
 							<tr>
 								<td><span class="redstar">*</span></td>
 								<td>政治面貌</td>
 								<td>
-									<input type="text" placeholder="请输入党员/团员/其他" value="{$list.shenfen}" name="shenfen" id="landscape">
+									<input type="text" placeholder="请输入党员/团员/其他" value="<?php echo ($list["shenfen"]); ?>" name="shenfen" id="landscape">
 								</td>
 							</tr>
 							<tr>
 								<td><span class="redstar">*</span></td>
 								<td>籍贯</td>
 								<td>
-									<input type="text" placeholder="请输入籍贯，如：浙江杭州" value="{$list.jiguan}" name="jiguan" id="Birthplace">
+									<input type="text" placeholder="请输入籍贯，如：浙江杭州" value="<?php echo ($list["jiguan"]); ?>" name="jiguan" id="Birthplace">
 								</td>
 							</tr>
 							<tr>
 								<td><span class="redstar">*</span></td>
 								<td>现居地</td>
 								<td>
-									<input type="text" placeholder="请输入现在居住的地址" value="{$list.adress}" name="adress" id="address">
+									<input type="text" placeholder="请输入现在居住的地址" value="<?php echo ($list["adress"]); ?>" name="adress" id="address">
 								</td>
 							</tr>
 							<tr>
 								<td><span class="redstar">*</span></td>
 								<td>手机号码</td>
 								<td>
-									<input type="text" placeholder="请输入手机号码" value="{$list.telphone}" name="telphone" id="phoneNumber" readonly>
+									<input type="text" placeholder="请输入手机号码" value="<?php echo ($list["telphone"]); ?>" name="telphone" id="phoneNumber" readonly>
 								</td>
 							</tr>
 							<tr>
 								<td><span class="redstar">*</span></td>
 								<td>邮箱</td>
 								<td>
-									<input type="text" placeholder="请输入可用邮箱" value="{$list.email}" name="email" id="mailaddress" readonly>
+									<input type="text" placeholder="请输入可用邮箱" value="<?php echo ($list["email"]); ?>" name="email" id="mailaddress" readonly>
 								</td>
 							</tr>
 							</tbody></table>
@@ -165,14 +165,14 @@
 								<td>教育经历</td>
 								<!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
 								<td>
-									<input type="text" placeholder="请输入学校及最高学历，如：浙江财经大学，本科" value="{$list.edu}" name="edu" id="education">
+									<input type="text" placeholder="请输入学校及最高学历，如：浙江财经大学，本科" value="<?php echo ($list["edu"]); ?>" name="edu" id="education">
 								</td>
 							</tr>
 							<tr>
 								<td></td>
 								<td>获奖情况</td>
 								<td>
-									<input type="text" placeholder="如：2016/6/6获得优秀毕业设计；多项奖项请使用分号隔开" value="{$list.reward}" name="reward" id="honors">
+									<input type="text" placeholder="如：2016/6/6获得优秀毕业设计；多项奖项请使用分号隔开" value="<?php echo ($list["reward"]); ?>" name="reward" id="honors">
 								</td>
 							</tr>
 							</tbody></table>
@@ -182,14 +182,14 @@
 								<td width="25"></td>
 								<td width="85">工作经历</td>
 								<td>
-									<input type="text" placeholder="如：2015/6/6~2016/6/6 浙江新安化工集团 会计(实习)；多段工作经历请使用分号隔开" value="{$list.work}" name="work" id="experience">
+									<input type="text" placeholder="如：2015/6/6~2016/6/6 浙江新安化工集团 会计(实习)；多段工作经历请使用分号隔开" value="<?php echo ($list["work"]); ?>" name="work" id="experience">
 								</td>
 							</tr>
 							<tr>
 								<td><span class="redstar">*</span></td>
 								<td>掌握技能</td>
 								<td>
-									<input type="text" placeholder="如：C;C++;Java;Word多段工作经历请使用分号隔开" value="{$list.skill}" name="skill" id="skill">
+									<input type="text" placeholder="如：C;C++;Java;Word多段工作经历请使用分号隔开" value="<?php echo ($list["skill"]); ?>" name="skill" id="skill">
 								</td>
 							</tr>
 							</tbody></table>
@@ -199,14 +199,14 @@
 								<td width="25"><span class="redstar">*</span></td>
 								<td width="85">自我评价</td>
 								<td>
-									<input type="text" placeholder="20字描述自己的优点" value="{$list.selftalk}" name="selftalk" class="input_520" id="point">
+									<input type="text" placeholder="20字描述自己的优点" value="<?php echo ($list["selftalk"]); ?>" name="selftalk" class="input_520" id="point">
 								</td>
 							</tr>
 							<tr>
 								<td><span class="redstar">*</span></td>
 								<td>职业规划</td>
 								<td>
-									<input type="text" placeholder="描述自己以后的职业目标" value="{$list.hopework}" name="hopework" class="input_520" id="target">
+									<input type="text" placeholder="描述自己以后的职业目标" value="<?php echo ($list["hopework"]); ?>" name="hopework" class="input_520" id="target">
 								</td>
 							</tr>
 							</tbody></table>
@@ -215,7 +215,7 @@
 							<tbody><tr>
 								<td width="25"><span class="redstar">*</span></td>
 								<td colspan="2">
-									接收简历邮箱： <span id="receiveEmailVal">{$list.email}</span>
+									接收简历邮箱： <span id="receiveEmailVal"><?php echo ($list["email"]); ?></span>
 									<input type="hidden" value="admin@admin.com" id="receiveEmail" name="email">
 								</td>
 							</tr>
@@ -279,8 +279,8 @@
 		</div>
 	</div>
 
-	<script src="{:C('Base_Url')}js/core.min.js" type="text/javascript"></script>
-	<script src="{:C('Base_Url')}js/popup.min.js" type="text/javascript"></script>
+	<script src="<?php echo C('Base_Url');?>js/core.min.js" type="text/javascript"></script>
+	<script src="<?php echo C('Base_Url');?>js/popup.min.js" type="text/javascript"></script>
 
 	<!--  -->
 

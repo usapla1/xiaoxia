@@ -42,7 +42,11 @@ var youdao_conv_id = 271546;
             	<input type="text" id="email" name="user" tabindex="1" placeholder="请输入常用邮箱地址" />
                 <span class="error" style="display:none;" id="beError"></span>
                 <input type="password" id="password" name="password" tabindex="2" placeholder="请输入密码" />
-				<input type="password" id="password1" name="password1" tabindex="3" placeholder="请确认密码" />
+				<input type="password" id="password1" name="repassword" tabindex="3" placeholder="请确认密码" />
+				<input type="text" id="name" name="username" tabindex="5" placeholder="请输入自己的真实姓名" />
+				<input type="text" id="telphone" name="telphone" tabindex="6" placeholder="请输入手机号码" />
+				<input type="date" id="user_date" name="user_date"  placeholder="请输入出生年月"/>
+
 				<input type="text" name="Verify" id="verify" tabindex="4" placeholder="请输入验证码">
 				<img alt="验证码" src="{:U('Home/Register/verify_c',array())}" title="点击刷新"> <br/>
             	<label class="fl registerJianJu" for="checkbox">
