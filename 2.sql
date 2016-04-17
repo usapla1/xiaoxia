@@ -1,0 +1,20 @@
+CREATE TABLE `cb_resume` (
+  `resumeid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `userid` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `sex` varchar(50) DEFAULT NULL,
+  `mingzhu` varchar(50) DEFAULT NULL,
+  `hunyin` varchar(50) DEFAULT NULL,
+  `shenfen` varchar(50) DEFAULT NULL,
+  `jiguan` varchar(50) DEFAULT NULL,
+  `adress` varchar(50) DEFAULT NULL,
+  `telphone` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `edu` varchar(250) DEFAULT NULL,
+  `reward` varchar(250) DEFAULT NULL,
+  `work` varchar(250) DEFAULT NULL,
+  `skill` varchar(250) DEFAULT NULL,
+  `selftalk` varchar(250) DEFAULT NULL,
+  `hopework` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`resumeid`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
