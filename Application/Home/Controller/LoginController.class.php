@@ -28,7 +28,11 @@ class LoginController extends BaseController{
         if(!empty($result)){
             $_SESSION['userid'] = $result['userid'];
             $_SESSION['role'] = $result['role'];
-            $this->success("登录成功","http://127.0.0.1/newfish/index.php/Home/User/index");
+            if($result['role'] == 2){
+                $this->success("登录成功","http://127.0.0.1/newfish/index.php/Home/Work/index");
+            }elseif($result['role'] == 1){
+                $this->success("登录成功","http://127.0.0.1/newfish/index.php/Home/User/index");
+            }
             //$this->ajaxReturn("login","登录成功",true);
         }else{
             $this->error("登录失败");

@@ -14,11 +14,13 @@ use Home\Controller\Base;
 class WorkController extends BaseController{
     //企业岗位表首页
     public function index(){
-        if(empty($_SESSION['user_id'])){
-            $this->ajaxReturn("Work","请先登录",false);
+        if(empty($_SESSION['userid'])){
+            $this->error("请先登录");
+            //$this->ajaxReturn("Work","请先登录",false);
         }
-        if($_SESSION['role'] !== 2 ){
-            $this->ajaxReturn("Work","对不起，您没有权限进入该页面",false);
+        if($_SESSION['role'] != 2 ){
+            $this->error("对不起，您没有权限进入该页面1".$_SESSION['role'],"http://127.0.0.1/newfish/index.php/Home/Login/index");
+            //$this->ajaxReturn("Work","对不起，您没有权限进入该页面",false);
         }
         $map = array();
         $map['user_id'] = $_SESSION['user_id'];
@@ -30,31 +32,36 @@ class WorkController extends BaseController{
 
     //新增职位
     public function add(){
-        if(empty($_SESSION['user_id'])){
-            $this->ajaxReturn("Work","请先登录",false);
+        if(empty($_SESSION['userid'])){
+            $this->error("请先登录");
+            //$this->ajaxReturn("Work","请先登录",false);
         }
-        if($_SESSION['role'] !== 2 ){
-            $this->ajaxReturn("Work","对不起，您没有权限进入该页面",false);
+        if($_SESSION['role'] != 2 ){
+            $this->error("对不起，您没有权限进入该页面");
+            //$this->ajaxReturn("Work","对不起，您没有权限进入该页面",false);
         }
         $data = array();
-        $data['user_id'] = $_SESSION['user_id'];
+        $data['userid'] = $_SESSION['userid'];
+        $data['work_num'] = I('post.work_num');
         $data['work_title'] = I('post.work_title');
-        $data['work_area'] = I('post.work_title');
-        $data['job_category'] = I('post.work_title');
-        $data['min_edu'] = I('post.work_title');
-        $data['work_type'] = I('post.work_title');
-        $data['work_num'] = I('post.work_title');
-        $data['work_year'] = I('post.work_title');
-        $data['work_describe'] = I('post.work_title');
-        $data['work_pay'] = I('post.work_title');
+        $data['positionName'] = I('post.positionName');
+        $data['department'] = I('post.department');
+        $data['jobNature'] = I('post.jobNature');
+        $data['salaryMin'] = I('post.salaryMin');
+        $data['salaryMax'] = I('post.salaryMax');
+        $data['workAddress'] = I('post.workAddress');
+        $data['workYear'] = I('post.workYear');
+        $data['education'] = I('post.education');
+        $data['temptation'] = I('post.temptation');
+        $data['receiveEmail'] = I('post.receiveEmail');
         $data['create_time'] = time();
         $data['update_time'] = time();
         $WorkDao = M('Work');
         $result =  $WorkDao->add($data);
         if(!empty($result)){
-            $this->ajaxReturn("Work","岗位保存成功",true);
+            $this->success("岗位发布成功","http://127.0.0.1/newfish/index.php/Home/Work/index");
         }else{
-            $this->ajaxReturn("Work","岗位保存失败",false);
+            $this->error("岗位保存失败");
         }
     }
 
