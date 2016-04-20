@@ -46,7 +46,6 @@
 			</a>
 			<ul id="navheader" class="reset">
 				<li><a href="index.html">首页</a></li>
-				<li><a href="enterprise.html">公司</a></li>
 				<li class="current"><a rel="nofollow" href="create.html">个人中心</a></li>
 			</ul>
 			<dl class="collapsible_menu">
@@ -56,7 +55,6 @@
 					<i></i>
 				</dt>
 				<dd><a rel="nofollow" href="Individual.html">我的简历</a></dd>
-				<dd><a href="#">我收藏的职位</a></dd>
 				<dd><a href="#">我投递的职位 <span id="noticeNo" class="red">(1)</span></a></dd>
 				<dd style="display: none;"><a href="accountBind.html">帐号设置</a></dd>
 				<dd class="logout" style="display: none;"><a rel="nofollow" href="login.html">退出</a></dd>
@@ -68,6 +66,7 @@
 			<dl class="company_center_aside">
 				<dt><h3>个人中心</h3></dt>
 				<dd><a href="personal.html">个人信息</a></dd>
+				<dd><a href="personal.html">职位列表</a></dd>
 				<dd><a href="Individual.html">我的简历</a></dd>
 				<dd><a href="Application.html">申请记录</a></dd>
 				<dd><a href="feedback.html">人事反馈</a></dd>
@@ -97,7 +96,7 @@
 								<td width="25"><span class="redstar">*</span></td>
 								<td>姓名</td>
 								<td>
-									<input type="text" placeholder="请输入姓名，如：新安" value="{$list.username}" name="name" id="tName" readonly>
+									<input type="text" placeholder="5555：男" value="{$list.username}" name="name" id="tName" readonly>
 								</td>
 							</tr>
 							<tr>
@@ -215,8 +214,8 @@
 							<tbody><tr>
 								<td width="25"><span class="redstar">*</span></td>
 								<td colspan="2">
-									接收简历邮箱： <span id="receiveEmailVal">{$list.email}</span>
-									<input type="hidden" value="admin@admin.com" id="receiveEmail" name="email">
+									接收简历邮箱：
+									<input type="text" value="{$list.email}" id="receiveEmail" name="email">
 								</td>
 							</tr>
 							<tr>

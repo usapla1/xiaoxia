@@ -18,6 +18,9 @@ class ResumeController extends BaseController{
         if(empty($_SESSION['userid'])){
             $this->error("对不起，请先登录","http://127.0.0.1/newfish/index.php/Home/Login/index");
         }
+        if($_SESSION['role'] != 1){
+            $this->error("对不起，请先登录","http://127.0.0.1/newfish/index.php/Home/Login/index");
+        }
         $map = array();
         $map['userid'] = $_SESSION['userid'];
         $ResumeDao = M('Resume');
