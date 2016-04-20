@@ -1,8 +1,8 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:wb="http://open.weibo.com/wb">
 <head>
-    <script type="text/javascript" async="" src="<?php echo C('Base_Url');?>js/conversion.js"></script>
-    <script src="<?php echo C('Base_Url');?>js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script>
+    <script type="text/javascript" async="" src="{:C('Base_Url')}js/conversion.js"></script>
+    <script src="{:C('Base_Url')}js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script>
     <style type="text/css"></style>
     <meta content="no-siteapp" http-equiv="Cache-Control" />
     <link media="handheld" rel="alternate" />
@@ -19,32 +19,32 @@
         console.log(1);
     </script>
     <link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon" />
-    <link href="<?php echo C('Base_Url');?>css/style.css" type="text/css" rel="stylesheet" />
-    <link href="<?php echo C('Base_Url');?>css/external.min.css" type="text/css" rel="stylesheet" />
-    <link href="<?php echo C('Base_Url');?>css/popup.css" type="text/css" rel="stylesheet" />
-    <script type="text/javascript" src="<?php echo C('Base_Url');?>js/jquery.1.10.1.min.js"></script>
-    <script src="<?php echo C('Base_Url');?>js/jquery.lib.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="<?php echo C('Base_Url');?>js/ajaxfileupload.js"></script>
-    <script src="<?php echo C('Base_Url');?>js/additional-methods.js" type="text/javascript"></script>
+    <link href="{:C('Base_Url')}css/style.css" type="text/css" rel="stylesheet" />
+    <link href="{:C('Base_Url')}css/external.min.css" type="text/css" rel="stylesheet" />
+    <link href="{:C('Base_Url')}css/popup.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="{:C('Base_Url')}js/jquery.1.10.1.min.js"></script>
+    <script src="{:C('Base_Url')}js/jquery.lib.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="{:C('Base_Url')}js/ajaxfileupload.js"></script>
+    <script src="{:C('Base_Url')}js/additional-methods.js" type="text/javascript"></script>
     <!--[if lte IE 8]>
-    <script type="text/javascript" src="<?php echo C('Base_Url');?>js/excanvas.js"></script>
+    <script type="text/javascript" src="{:C('Base_Url')}js/excanvas.js"></script>
     <![endif]-->
     <script type="text/javascript">
         var youdao_conv_id = 271546;
     </script>
-    <script src="<?php echo C('Base_Url');?>js/conv.js" type="text/javascript"></script>
-    <script src="<?php echo C('Base_Url');?>js/ajaxCross.json" charset="UTF-8"></script>
+    <script src="{:C('Base_Url')}js/conv.js" type="text/javascript"></script>
+    <script src="{:C('Base_Url')}js/ajaxCross.json" charset="UTF-8"></script>
     <style type="text/css">
 
     </style>
-    <link rel="stylesheet" href="<?php echo C('Base_Url');?>css/ui.css" />
-    <link rel="stylesheet" href="<?php echo C('Base_Url');?>css/window.css" />
+    <link rel="stylesheet" href="{:C('Base_Url')}css/ui.css" />
+    <link rel="stylesheet" href="{:C('Base_Url')}css/window.css" />
 </head>
 <body>
 <div id="body">
     <div id="header">
         <div class="wrapper">
-            <a class="logo" href="index.html"> <img width="229" height="43" alt="新安招聘" src="<?php echo C('Base_Url');?>images/logo.png" /> </a>
+            <a class="logo" href="index.html"> <img width="229" height="43" alt="新安招聘" src="{:C('Base_Url')}images/logo.png" /> </a>
             <ul id="navheader" class="reset">
                 <li><a href="index.html">首页</a></li>
                 <li><a href="enterprise.html">公司</a></li>
@@ -108,7 +108,7 @@
                         <span>0</span> 个职位 还可发布
                         <span>5</span> 个职位
                     </div>
-                    <form action="<?php echo U('Work/add');?>" method="post" id="jobForm">
+                    <form action="{:U('Work/add')}" method="post" id="jobForm">
                         <input type="hidden" value="" name="id" />
                         <input type="hidden" value="create" name="preview" />
                         <input type="hidden" value="25927" name="companyId" />
@@ -245,8 +245,8 @@
         <div class="copyright">&copy;2015-2016 Xinan <a target="_blank" href="#">京ICP备11111111号-1</a></div>
     </div>
 </div>
-<script src="<?php echo C('Base_Url');?>js/core.min.js" type="text/javascript"></script>
-<script src="<?php echo C('Base_Url');?>js/popup.min.js" type="text/javascript"></script>
+<script src="{:C('Base_Url')}js/core.min.js" type="text/javascript"></script>
+<script src="{:C('Base_Url')}js/popup.min.js" type="text/javascript"></script>
 <!--  -->
 <div id="cboxOverlay" style="display: none;"></div>
 <div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
