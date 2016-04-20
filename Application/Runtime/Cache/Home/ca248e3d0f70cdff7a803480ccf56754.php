@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html xmlns:wb="http://open.weibo.com/wb">
  <head> 
-  <script type="text/javascript" async="" src="{:C('Base_Url')}js/conversion.js"></script>
-  <script src="{:C('Base_Url')}js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script>
+  <script type="text/javascript" async="" src="<?php echo C('Base_Url');?>js/conversion.js"></script>
+  <script src="<?php echo C('Base_Url');?>js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script>
   <style type="text/css"></style> 
   <meta content="no-siteapp" http-equiv="Cache-Control" /> 
   <link media="handheld" rel="alternate" /> 
@@ -19,32 +19,32 @@ var ctx = "http://www.lagou.com";
 console.log(1);
 </script> 
   <link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon" /> 
-  <link href="{:C('Base_Url')}css/style.css" type="text/css" rel="stylesheet" />
-  <link href="{:C('Base_Url')}css/external.min.css" type="text/css" rel="stylesheet" />
-  <link href="{:C('Base_Url')}css/popup.css" type="text/css" rel="stylesheet" />
-  <script type="text/javascript" src="{:C('Base_Url')}js/jquery.1.10.1.min.js"></script>
-  <script src="{:C('Base_Url')}js/jquery.lib.min.js" type="text/javascript"></script>
-  <script type="text/javascript" src="{:C('Base_Url')}js/ajaxfileupload.js"></script>
-  <script src="{:C('Base_Url')}js/additional-methods.js" type="text/javascript"></script>
+  <link href="<?php echo C('Base_Url');?>css/style.css" type="text/css" rel="stylesheet" />
+  <link href="<?php echo C('Base_Url');?>css/external.min.css" type="text/css" rel="stylesheet" />
+  <link href="<?php echo C('Base_Url');?>css/popup.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="<?php echo C('Base_Url');?>js/jquery.1.10.1.min.js"></script>
+  <script src="<?php echo C('Base_Url');?>js/jquery.lib.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="<?php echo C('Base_Url');?>js/ajaxfileupload.js"></script>
+  <script src="<?php echo C('Base_Url');?>js/additional-methods.js" type="text/javascript"></script>
   <!--[if lte IE 8]>
-    <script type="text/javascript" src="{:C('Base_Url')}js/excanvas.js"></script>
+    <script type="text/javascript" src="<?php echo C('Base_Url');?>js/excanvas.js"></script>
 <![endif]--> 
   <script type="text/javascript">
 var youdao_conv_id = 271546; 
 </script> 
-  <script src="{:C('Base_Url')}js/conv.js" type="text/javascript"></script>
-  <script src="{:C('Base_Url')}js/ajaxCross.json" charset="UTF-8"></script>
+  <script src="<?php echo C('Base_Url');?>js/conv.js" type="text/javascript"></script>
+  <script src="<?php echo C('Base_Url');?>js/ajaxCross.json" charset="UTF-8"></script>
   <style type="text/css">
 
 </style> 
-  <link rel="stylesheet" href="{:C('Base_Url')}css/ui.css" />
-  <link rel="stylesheet" href="{:C('Base_Url')}css/window.css" />
+  <link rel="stylesheet" href="<?php echo C('Base_Url');?>css/ui.css" />
+  <link rel="stylesheet" href="<?php echo C('Base_Url');?>css/window.css" />
  </head> 
  <body> 
   <div id="body"> 
    <div id="header"> 
     <div class="wrapper"> 
-     <a class="logo" href="index.html"> <img width="229" height="43" alt="新安招聘" src="{:C('Base_Url')}images/logo.png" /> </a>
+     <a class="logo" href="index.html"> <img width="229" height="43" alt="新安招聘" src="<?php echo C('Base_Url');?>images/logo.png" /> </a>
      <ul id="navheader" class="reset"> 
       <li><a href="index.html">首页</a></li> 
       <li><a href="enterprise.html">公司</a></li> 
@@ -103,7 +103,7 @@ var youdao_conv_id = 271546;
             <h1><em></em>面试通知 <span>（共<i style="color:#fff;font-style:normal" id="positionNumber">1</i>个）</span></h1>
         </dt>
         <dd>
-        <form id="searchForm" action="{:U('Mail/add')}" method="POST">
+        <form id="searchForm" action="<?php echo U('Mail/add');?>" method="POST">
           <table> 
             <tbody>
             <tr>
@@ -130,7 +130,7 @@ var youdao_conv_id = 271546;
       </dd>
     </dl>
 </div><!-- end .content -->
-<script src="{:C('Base_Url')}js/job_list.min.js" type="text/javascript"></script>
+<script src="<?php echo C('Base_Url');?>js/job_list.min.js" type="text/javascript"></script>
       <div class="clear"></div>
         <a rel="nofollow" title="回到顶部" id="backtop"></a>
       </div><!-- end #container -->
@@ -145,9 +145,9 @@ var youdao_conv_id = 271546;
     </div>
   </div>
 
-<script src="{:C('Base_Url')}js/core.min.js" type="text/javascript"></script>
-<script src="{:C('Base_Url')}js/popup.min.js" type="text/javascript"></script>
-<script src="{:C('Base_Url')}js/tongji.js" type="text/javascript"></script>
+<script src="<?php echo C('Base_Url');?>js/core.min.js" type="text/javascript"></script>
+<script src="<?php echo C('Base_Url');?>js/popup.min.js" type="text/javascript"></script>
+<script src="<?php echo C('Base_Url');?>js/tongji.js" type="text/javascript"></script>
 <!--  -->
-<script src="{:C('Base_Url')}js/analytics01.js" type="text/javascript"></script><script type="text/javascript" src="js/h.js"></script>
+<script src="<?php echo C('Base_Url');?>js/analytics01.js" type="text/javascript"></script><script type="text/javascript" src="js/h.js"></script>
 <div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body></html>

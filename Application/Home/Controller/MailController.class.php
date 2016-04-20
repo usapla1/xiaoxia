@@ -13,7 +13,7 @@ use Home\Controller\Base;
 class MailController extends Controller{
 	//企业发送过的邮件主页
 	public function index(){
-		if(empty($_SESSION['user_id'])){
+/*		if(empty($_SESSION['user_id'])){
 		$this->ajaxReturn("Mail","请先登录",false);
 		}
 		if($_SESSION['role'] !== 2 ){
@@ -21,7 +21,7 @@ class MailController extends Controller{
 		}
 		$MailsmsDao = M('Mailsms');
 		$list = $MailsmsDao->join('cb_users ON cb_mailsms.user_id = cb_users.user_id')->order('add_time')->select();
-		$this->assign('list',$list);
+		$this->assign('list',$list);*/
 		$this->display();
 	}
 
@@ -43,19 +43,19 @@ class MailController extends Controller{
 	//发送邮件
 	public function add(){
 		$data = array();
-		$data['user_id'] = I('post.user_id');
-		$data['user_id'] = I('post.work_title');
-		$data['work_id'] = I('post.work_id');
-		$data['mail'] = I('post.mail');
-		$data['title'] = I('post.title');
-		$data['content'] = I('post.content');
+		$data['workname'] = I('workname');
+		$data['username'] = I('username');
+		$data['mail'] = I('mail');
+		$data['title'] = I('title');
+		$data['content'] = I('content');
 		$data['add_time'] = time();
 		$MailsmsDao = M('Mailsms');
 		$result = $MailsmsDao->add($data);
 
-		if(!empty($result) && SendMail($_POST['mail'],$_POST['title'],$_POST['content']))
+		if(!empty($result) && SendMail($data['mail'],$data['title'],$data['content']))
 			$this->success('发送成功！');
-		else
+		else{
 			$this->error('发送失败');
+		}
 	}
 }
