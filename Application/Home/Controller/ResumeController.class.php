@@ -70,7 +70,14 @@ class ResumeController extends BaseController{
         if($_SESSION['role'] != 1){
             $this->error("对不起，你不是求职者".$_SESSION['role'],"http://127.0.0.1/newfish/index.php/Home/Work/index");
         }
-
+        $Seek = M('Seek');
+        $map = array();
+        $map['workid'] = I('post.workid');
+        $map['userid'] = $_SESSION['userid'];
+        $result1 = $Seek->where($map)->select();
+        if($result1){
+            $this->error("亲，简历投递失败，您已经投过了");
+        }
         $Seek = M('Seek');
         $data = array();
         $data['workid'] = I('post.workid');

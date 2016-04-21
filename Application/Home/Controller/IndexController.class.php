@@ -6,12 +6,20 @@ use Home\Controller\Base;
 class IndexController extends BaseController{
     //主页
     public function index(){
-        $Resumes = M('Resume');
         $Works = M('Work');
-        $lists1 = $Resumes->select();
         $lists2 = $Works->select();
-        $this->assign('lists1',$lists1);
+        $count = $Works->count();
+        $this->assign('count',$count);
         $this->assign('lists2',$lists2);
+        $this->display();
+    }
+    //主页
+    public function search(){
+        $map = array();
+        $work_title = I('post.work_title');
+        $map["work_title"] = array("like","%".$work_title);
+        $Works = M('Work');
+        $lists2 = $Works->select();
         $this->display();
     }
 
