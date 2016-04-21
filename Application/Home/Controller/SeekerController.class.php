@@ -48,4 +48,5 @@ class SeekerController extends BaseController{
         $this->assign('list',$list);
         $this->display();
     }
+
 }

@@ -48,9 +48,9 @@ span.error{display:block; margin:5px 0 10px 0; font-size:14px; color:#ff6a6a;tex
 #remindActive .remind span{color:#019875;}
 #remindActive a{color:#777; padding:0 10px;}
 #remindActive a.remindbtn{color:#fff;background:#019875;}
-#header{min-width:1024px;height:60px; background:#fafafa;border-top:3px solid #C4DEE7;}
+#header{min-width:1024px;height:100px; background:#fafafa;border-top:3px solid #C4DEE7;}
 #header .wrapper{width:1024px;margin:0 auto; position:relative;z-index:90;}
-.logo{border:0; float:left; margin:10px 0 0 0;}
+.logo{border:0; float:left; margin:-20px 0 0 0;}
 #navheader{float:left;position:relative; margin-left:30px;font-size:0;}
 #navheader li{height:60px;display: inline-block;*display: inline; *zoom:1;position:relative; z-index:3;margin:0;padding: 0 20px;}
 #navheader li.current{z-index:1;}
@@ -87,6 +87,7 @@ span.error{display:block; margin:5px 0 10px 0; font-size:14px; color:#ff6a6a;tex
 #search_button{height:41px;width:152px; color:#FFF; font-size:18px;border:none;background:#747778;float:right; cursor:pointer;}
 #search_button:hover{background:#616364;} 
 #search_box{border:2px solid #019875;width:740px;height:37px; position:relative;}
+#searchInput{border:2px solid #f1f1f1;outline:none;font:20px/32px "微软雅黑","宋体",Arial; width: 600px;height: 30px;  padding: 6px 10px; margin-top:10px;margin-left:30px;transition:border 0.2s ease-in 0s;}
 #search_input{width:476px; height:23px; line-height:23px;float:left;font-size:16px;padding:7px 8px 7px 10px;margin:0 0 0 94px;border:0;}
 #search_button{height:37px;width:152px; color:#FFF; font-size:18px;border:none;background:#019875;float:right; cursor:pointer;}
 #search_button:hover{background:#028b6b;}
@@ -99,8 +100,8 @@ span.error{display:block; margin:5px 0 10px 0; font-size:14px; color:#ff6a6a;tex
 .fixed {position:fixed !important; /* IE 6 不支持 fixed，只能用 absolute */top:0 !important;}
 #sidebar .mainNavs{background:#fafafa; }
 #sidebar .menu_main{width:206px;padding:6px 12px; *padding-bottom:10px; border:2px solid #fafafa; border-right:none;overflow:hidden;position:relative;}
-#sidebar .menu_main h2{font-size:18px;padding-left:8px;font-weight:500; /* background:url(img/arr.png) right 5px no-repeat; */}
-#sidebar .menu_main h2 span{width:13px;height:14px;background:url(img/arr.png) 0 0 no-repeat;float:right; margin-top:3px;*margin-top:-15px;}
+#sidebar .menu_main a h2{font-size:18px;padding-left:8px;font-weight:500;min-width: 190px; /* background:url(img/arr.png) right 5px no-repeat; */}
+#sidebar .menu_main a h2 span{width:13px;height:14px;background:url(img/arr.png) 0 0 no-repeat;float:right; margin-top:3px;*margin-top:-15px;}
 #sidebar .menu_main a{float:left;white-space:nowrap;margin:0 5px 5px 0;padding:0 8px;*padding:0 6px;}
 #sidebar .menu_main a:hover{/* background:#019875; */ color:#019875;text-decoration:underline;}
 #sidebar .current .menu_main{background:#fff; border:2px solid #c9cbce; border-right:none; z-index:102;}
@@ -1615,7 +1616,7 @@ ul.resumeLists li.fileResume .resumeIntro span{	margin-top:-30px;}
 .company_center_content>dt h1{color:#fff;font-size:24px;font-weight:normal;line-height:47px;padding:0 20px;margin:0}
 .company_center_content>dt em{background:url(img/title_arrow_new.png) no-repeat;width:4px;height:5px;position:absolute;left:-4px;top:0}
 .company_center_content>dt span{font-size:14px}
-.company_center_content>dd{min-height:337px;padding:70px 0;position:relative}
+.company_center_content>dd{/*min-height:337px;*/padding:70px 0;position:relative}
 .company_center_content>dd .ccc_tr{position:absolute;right:20px;top:20px}
 .company_center_content>dd .ccc_tr span{color:#019875;font-weight:600}
 .company_center_content .no_resume_tip{font-size:18px;min-height:65px;background:url(img/noresult_95.png) 140px 0 no-repeat;padding:70px 0 0 250px;margin-top:15px;line-height:32px}
@@ -1707,13 +1708,13 @@ ul.resumeLists .resumeIntro h3.read em{width:17px;height:17px;background:url(img
 .publish_tip h2{font-size:18px;font-weight:normal;margin:0 0 10px 0}
 .publish_tip a{font-size:14px;color:#999;text-decoration:underline;line-height:24px}
 .publish_tip a:hover{color:#019875}
-.company_center_content .my_jobs{margin:0 40px}
+.company_center_content .my_jobs{margin:0 0}
 #jobForm{font-size:18px;margin:0 40px}
 #jobForm table{width:100%;margin-bottom:10px}
 #jobForm table.btm{border-bottom:1px dashed #e0e0e0;padding-bottom:10px}
 #jobForm td{vertical-align:top;padding:10px 0;line-height:45px}
 #jobForm td .redstar{margin:3px 5px 0 0}
-#searchForm{font-size:18px;margin:0 40px}
+#searchForm{font-size:18px;margin:30px 40px}
 #searchForm table{width:100%;margin-bottom:10px}
 #searchForm table.btm{border-bottom:1px dashed #e0e0e0;padding-bottom:10px}
 #searchForm td{vertical-align:top;padding:10px 0;line-height:45px}

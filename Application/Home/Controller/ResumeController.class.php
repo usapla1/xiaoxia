@@ -32,8 +32,8 @@ class ResumeController extends BaseController{
     //编辑简历
     public function edit(){
         session_start();
-        if(empty($_SESSION['user_id'])){
-            $this->ajaxReturn("Resume","请先登录",false);
+        if(empty($_SESSION['userid'])){
+            $this->error("请先登录");
         }
         $data = array();
         $data['sex'] = I('post.sex');
@@ -59,6 +59,31 @@ class ResumeController extends BaseController{
             $this->success("亲，编辑成功");
         }else{
             $this->error("亲，编辑失败");
+        }
+    }
+
+    //投递简历
+    public function sendresume(){
+        if(empty($_SESSION['userid'])){
+            $this->error("请先登录","http://127.0.0.1/newfish/index.php/Home/Login/index");
+        }
+        if($_SESSION['role'] != 1){
+            $this->error("对不起，你不是求职者".$_SESSION['role'],"http://127.0.0.1/newfish/index.php/Home/Work/index");
+        }
+
+        $Seek = M('Seek');
+        $data = array();
+        $data['workid'] = I('post.workid');
+        $data['work_title'] = I('post.work_title');
+        $data['userid'] = $_SESSION['userid'];
+        $data['is_look'] = 0 ;
+        $data['create_time'] =  date('Y-m-d H:i:s',time());
+        $data['update_time'] =  date('Y-m-d H:i:s',time());
+        $result = $Seek->add($data);
+        if($result){
+            $this->success("亲，简历投递成功，等待面试通知");
+        }else{
+            $this->error("亲，简历投递失败，请重新尝试");
         }
     }
 }

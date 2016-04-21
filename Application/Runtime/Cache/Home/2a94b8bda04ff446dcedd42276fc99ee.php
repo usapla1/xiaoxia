@@ -1,7 +1,7 @@
-<!DOCTYPE HTML>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb">
 <head>
-<script id="allmobilize" charset="utf-8" src="{:C('Base_Url')}js/allmobilize.min.js"></script>
+<script id="allmobilize" charset="utf-8" src="<?php echo C('Base_Url');?>js/allmobilize.min.js"></script>
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <link rel="alternate" media="handheld"  />
 <!-- end 云适配 -->
@@ -18,16 +18,16 @@ var ctx = "h";
 console.log(1);
 </script>
 
-<link rel="Shortcut Icon" href="{:C('Base_Url')}images/favicon.ico">
-<link rel="stylesheet" type="text/css" href="{:C('Base_Url')}css/style.css"/>
-<link rel="stylesheet" type="text/css" href="{:C('Base_Url')}css/external.min.css"/>
-<link rel="stylesheet" type="text/css" href="{:C('Base_Url')}css/popup.css"/>
-<script src="{:C('Base_Url')}js/jquery.1.10.1.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="{:C('Base_Url')}js/jquery.lib.min.js"></script>
-<script src="{:C('Base_Url')}js/ajaxfileupload.js" type="text/javascript"></script>
-<script type="text/javascript" src="{:C('Base_Url')}js/additional-methods.js"></script>
+<link rel="Shortcut Icon" href="<?php echo C('Base_Url');?>images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="<?php echo C('Base_Url');?>css/style.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo C('Base_Url');?>css/external.min.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo C('Base_Url');?>css/popup.css"/>
+<script src="<?php echo C('Base_Url');?>js/jquery.1.10.1.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?php echo C('Base_Url');?>js/jquery.lib.min.js"></script>
+<script src="<?php echo C('Base_Url');?>js/ajaxfileupload.js" type="text/javascript"></script>
+<script type="text/javascript" src="<?php echo C('Base_Url');?>js/additional-methods.js"></script>
 <!--[if lte IE 8]>
-    <script type="text/javascript" src="{:C('Base_Url')}style/js/excanvas.js"></script>
+    <script type="text/javascript" src="<?php echo C('Base_Url');?>style/js/excanvas.js"></script>
 <![endif]-->
 <style type="text/css"> 
  * { 
@@ -196,14 +196,14 @@ console.log(1);
 <script type="text/javascript">
 var youdao_conv_id = 271546; 
 </script> 
-<script type="text/javascript" src="{:C('Base_Url')}js/conv.js"></script>
+<script type="text/javascript" src="<?php echo C('Base_Url');?>js/conv.js"></script>
 </head>
 <body>
 <div id="body">
 	<div id="header">
     	<div class="wrapper">
     		<a href="index.html" class="logo">
-    			<img src="{:C('Base_Url')}images/logo.png" width="229" height="80" alt="新安招聘" />
+    			<img src="<?php echo C('Base_Url');?>images/logo.png" width="229" height="80" alt="新安招聘" />
     		</a>
     		<div class="searchBox">
     			<form id="searchForm" name="searchForm" action="list.html" method="get">
@@ -219,16 +219,16 @@ var youdao_conv_id = 271546;
 			 <div class="slider"> 
 			  <ul class="slider-main"> 
 			   <li class="slider-panel"> 
-			    <a href="#" target="_blank"><img alt="" title="" src="{:C('Base_Url')}images/a254b11ecead45bda166afa8aaa9c8bc.jpg"></a>
+			    <a href="#" target="_blank"><img alt="" title="" src="<?php echo C('Base_Url');?>images/a254b11ecead45bda166afa8aaa9c8bc.jpg"></a>
 			   </li> 
 			   <li class="slider-panel"> 
-			    <a href="#" target="_blank"><img alt="" title="" src="{:C('Base_Url')}images/a254b11ecead45bda166afa8aaa9c8bc.jpg"></a>
+			    <a href="#" target="_blank"><img alt="" title="" src="<?php echo C('Base_Url');?>images/a254b11ecead45bda166afa8aaa9c8bc.jpg"></a>
 			   </li> 
 			   <li class="slider-panel"> 
-			    <a href="#" target="_blank"><img alt="" title="" src="{:C('Base_Url')}images/a254b11ecead45bda166afa8aaa9c8bc.jpg"></a>
+			    <a href="#" target="_blank"><img alt="" title="" src="<?php echo C('Base_Url');?>images/a254b11ecead45bda166afa8aaa9c8bc.jpg"></a>
 			   </li> 
 			   <li class="slider-panel"> 
-			    <a href="#" target="_blank"><img alt="" title="" src="{:C('Base_Url')}images/a254b11ecead45bda166afa8aaa9c8bc.jpg"></a>
+			    <a href="#" target="_blank"><img alt="" title="" src="<?php echo C('Base_Url');?>images/a254b11ecead45bda166afa8aaa9c8bc.jpg"></a>
 			   </li> 
 			  </ul> 
 			  <div class="slider-extra"> 
@@ -279,26 +279,24 @@ var youdao_conv_id = 271546;
 
 
 			            <ul class="reset my_jobs">
-                         <volist name="lists2" id="vo">
-                          <form id="searchForm" action="{:U('Resume/sendresume')}" method="post">
-                          <input type="hidden" value="{$vo.workid}" name="workid">
-                          <input type="hidden" value="{$vo.work_title}" name="work_title">
+                         <?php if(is_array($lists2)): $i = 0; $__LIST__ = $lists2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><form id="searchForm" action="<?php echo U('Resume/sendresume');?>" method="post">
+                          <input type="hidden" value="<?php echo ($vo["workid"]); ?>" name="workid">
+                          <input type="hidden" value="<?php echo ($vo["work_title"]); ?>" name="work_title">
 				            <li data-id="149594">
 		                        <h3>
-		                            <a target="_blank" title="随便写" href="http://www.lagou.com/jobs/149594.html">{$vo.work_title}</a>
-		                            <span>[{$vo.workaddress}]</span>
+		                            <a target="_blank" title="随便写" href="http://www.lagou.com/jobs/149594.html"><?php echo ($vo["work_title"]); ?></a>
+		                            <span>[<?php echo ($vo["workaddress"]); ?>]</span>
 		                        </h3>
 		                        <span class="receivedResumeNo">
 		                            <a href="unHandleResumes.html?positionId=149594">应聘简历(5)</a>
 		                        </span>
-		                        <div>{$vo.positionname}/ {$vo.salarymin}k-{$vo.salarymax}k / {$vo.workyear}年 / {$vo.education}及以上</div>
-		                        <div class="c9">发布时间： {$vo.create_time}</div>
+		                        <div><?php echo ($vo["positionname"]); ?>/ <?php echo ($vo["salarymin"]); ?>k-<?php echo ($vo["salarymax"]); ?>k / <?php echo ($vo["workyear"]); ?>年 / <?php echo ($vo["education"]); ?>及以上</div>
+		                        <div class="c9">发布时间： <?php echo ($vo["create_time"]); ?></div>
 								<div class="links">
                                  <input type="submit" class="job_del" value="投递">
 								</div>
 		                    </li>
-                    </form>
-                     </volist>
+                    </form><?php endforeach; endif; else: echo "" ;endif; ?>
 	                    </ul>
 		        </dd>
             </dl>
