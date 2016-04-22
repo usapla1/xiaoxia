@@ -13,13 +13,16 @@ class IndexController extends BaseController{
         $this->assign('lists2',$lists2);
         $this->display();
     }
-    //主页
+    //搜索结果
     public function search(){
         $map = array();
         $work_title = I('post.work_title');
         $map["work_title"] = array("like","%".$work_title);
         $Works = M('Work');
         $lists2 = $Works->select();
+        $count = $Works->count();
+        $this->assign('lists2',$lists2);
+        $this->assign('count',$count);
         $this->display();
     }
 
