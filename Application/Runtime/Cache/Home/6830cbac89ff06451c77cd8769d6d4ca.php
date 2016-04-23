@@ -1,7 +1,7 @@
-<!DOCTYPE HTML>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
 <html xmlns:wb="http://open.weibo.com/wb"><head>
-    </script><script type="text/javascript" async="" src="{:C('Base_Url')}js/conversion.js"></script>
-    <script src="{:C('Base_Url')}js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script>
+    </script><script type="text/javascript" async="" src="<?php echo C('Base_Url');?>js/conversion.js"></script>
+    <script src="<?php echo C('Base_Url');?>js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script>
     <style type="text/css"></style>
     <meta content="no-siteapp" http-equiv="Cache-Control">
     <link  media="handheld" rel="alternate">
@@ -18,29 +18,29 @@
         var ctx = "h";
         console.log(1);
     </script>
-    <link href="{:C('Base_Url')}h/images/favicon.ico" rel="Shortcut Icon">
-    <link href="{:C('Base_Url')}css/style.css" type="text/css" rel="stylesheet">
-    <link href="{:C('Base_Url')}css/external.min.css" type="text/css" rel="stylesheet">
-    <link href="{:C('Base_Url')}css/popup.css" type="text/css" rel="stylesheet">
-    <script type="text/javascript" src="{:C('Base_Url')}js/jquery.1.10.1.min.js"></script>
-    <script src="{:C('Base_Url')}js/jquery.lib.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="{:C('Base_Url')}js/ajaxfileupload.js"></script>
-    <script src="{:C('Base_Url')}js/additional-methods.js" type="text/javascript"></script>
+    <link href="<?php echo C('Base_Url');?>h/images/favicon.ico" rel="Shortcut Icon">
+    <link href="<?php echo C('Base_Url');?>css/style.css" type="text/css" rel="stylesheet">
+    <link href="<?php echo C('Base_Url');?>css/external.min.css" type="text/css" rel="stylesheet">
+    <link href="<?php echo C('Base_Url');?>css/popup.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="<?php echo C('Base_Url');?>js/jquery.1.10.1.min.js"></script>
+    <script src="<?php echo C('Base_Url');?>js/jquery.lib.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="<?php echo C('Base_Url');?>js/ajaxfileupload.js"></script>
+    <script src="<?php echo C('Base_Url');?>js/additional-methods.js" type="text/javascript"></script>
     <!--[if lte IE 8]>
-    <script type="text/javascript" src="{:C('Base_Url')}js/excanvas.js"></script>
+    <script type="text/javascript" src="<?php echo C('Base_Url');?>js/excanvas.js"></script>
     <![endif]-->
     <script type="text/javascript">
         var youdao_conv_id = 271546;
     </script>
-    <script src="{:C('Base_Url')}js/conv.js" type="text/javascript"></script>
-    <script src="{:C('Base_Url')}js/ajaxCross.json" charset="UTF-8"></script>
+    <script src="<?php echo C('Base_Url');?>js/conv.js" type="text/javascript"></script>
+    <script src="<?php echo C('Base_Url');?>js/ajaxCross.json" charset="UTF-8"></script>
 </head>
 <body>
 <div id="body">
     <div id="header">
         <div class="wrapper">
             <a class="logo" href="h/">
-                <img width="229" height="43" alt="新安招聘" src="{:C('Base_Url')}images/logo.png">
+                <img width="229" height="43" alt="新安招聘" src="<?php echo C('Base_Url');?>images/logo.png">
             </a>
             <ul id="navheader" class="reset">
                 <li><a href="index.html">首页</a></li>
@@ -49,7 +49,7 @@
             </ul>
             <dl class="collapsible_menu">
                 <dt>
-                    <span>{$list.username}&nbsp;</span>
+                    <span><?php echo ($list["username"]); ?>&nbsp;</span>
                     <span class="red dn" id="noticeDot-1"></span>
                     <i></i>
                 </dt>
@@ -82,11 +82,11 @@
                 </dt>
                 <dd id="pad">
                     <ul class="user_noModify">
-                        <li>用户名：<span>{$list.username}</span> </li>
-                        <li>邮箱地址：<span>{$list.email}</span> </li>
-                        <li>手机号码：<span>{$list.telphone}</span> </li>
-                        <li>出生日期：<span>{$list.userdata}</span> </li>
-                        <li>登录密码：<span>{$list.repassword}</span>    <a href="updatePwd.html" alt="修改密码">修改密码</a> </li>
+                        <li>用户名：<span><?php echo ($list["username"]); ?></span> </li>
+                        <li>邮箱地址：<span><?php echo ($list["email"]); ?></span> </li>
+                        <li>手机号码：<span><?php echo ($list["telphone"]); ?></span> </li>
+                        <li>出生日期：<span><?php echo ($list["userdata"]); ?></span> </li>
+                        <li>登录密码：<span><?php echo ($list["repassword"]); ?></span>    <a href="updatePwd.html" alt="修改密码">修改密码</a> </li>
                     </ul>
                 </dd>
             </dl>
@@ -261,7 +261,7 @@
 
         });
     </script>
-        <script src="{:C('Base_Url')}js/setting.js"></script>
+        <script src="<?php echo C('Base_Url');?>js/setting.js"></script>
         <div class="clear"></div>
         <input type="hidden" value="" id="resubmitToken">
         <a rel="nofollow" title="回到顶部" id="backtop"></a>
@@ -277,8 +277,8 @@
     </div>
 </div>
 
-<script src="{:C('Base_Url')}js/core.min.js" type="text/javascript"></script>
-<script src="{:C('Base_Url')}js/popup.min.js" type="text/javascript"></script>
+<script src="<?php echo C('Base_Url');?>js/core.min.js" type="text/javascript"></script>
+<script src="<?php echo C('Base_Url');?>js/popup.min.js" type="text/javascript"></script>
 
 <!--  -->
 

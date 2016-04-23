@@ -93,4 +93,20 @@ class ResumeController extends BaseController{
             $this->error("亲，简历投递失败，请重新尝试");
         }
     }
+
+    //查看简历
+    public function online()
+    {
+        if (empty($_SESSION['userid'])) {
+            $this->error("请先登录");
+            //$this->ajaxReturn("Work","请先登录",false);
+        }
+        $map = array();
+        $map['resumeid'] = I('resumeid');
+        $ResumeDao = M('Resume');
+        $list = $ResumeDao->where($map)->find();
+
+        $this->assign('list',$list);
+        $this->display();
+    }
 }

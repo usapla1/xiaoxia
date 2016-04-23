@@ -16,7 +16,7 @@ class IndexController extends BaseController{
     //搜索结果
     public function search(){
         $map = array();
-        $work_title = I('post.work_title');
+        $work_title = I('work_title');
         $map["work_title"] = array("like","%".$work_title);
         $Works = M('Work');
         $lists2 = $Works->select();

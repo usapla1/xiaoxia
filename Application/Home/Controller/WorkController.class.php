@@ -45,6 +45,40 @@ class WorkController extends BaseController{
         }
             $this->display();
     }
+    //查看职位详情
+    public function workinfo()
+    {
+        if (empty($_SESSION['userid'])) {
+            $this->error("请先登录");
+            //$this->ajaxReturn("Work","请先登录",false);
+        }
+
+        $workid = I('workid');
+        $map = array();
+        $map['workid'] = $workid;
+        $WorkDao = M('Work');
+        $list = $WorkDao->where($map)->find();
+
+        $this->assign('list',$list);
+        $this->display();
+    }
+    //职位筛选
+    public function workchose()
+    {
+        if (empty($_SESSION['userid'])) {
+            $this->error("请先登录");
+            //$this->ajaxReturn("Work","请先登录",false);
+        }
+        if ($_SESSION['role'] != 1) {
+            $this->error("对不起，您没有权限进入该页面");
+            //$this->ajaxReturn("Work","对不起，您没有权限进入该页面",false);
+        }
+
+        $ResumeDao = M('Resume');
+        $list = $ResumeDao->select();
+        $this->assign('list',$list);
+        $this->display();
+    }
     //新增职位
     public function add(){
         if(empty($_SESSION['userid'])){

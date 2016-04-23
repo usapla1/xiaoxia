@@ -62,17 +62,23 @@ class ChooseController extends BaseController{
     function expUser(){//导出Excel
         $xlsName  = "User";
         $xlsCell  = array(
-            array('id','账号序列'),
-            array('truename','名字'),
-            array('sex','性别')
+            array('resumeid','账号序列'),
+            array('userid','userid'),
+            array('username','username'),
+            array('sex','性别'),
+            array('mingzhu','mingzhu'),
+            array('hunyin','hunyin'),
+            array('shenfen','shenfen'),
+            array('jiguan','jiguan'),
+            array('adress','adress'),
+            array('telphone','telphone'),
+            array('email','email'),
+            array('edu','edu'),
+            array('reward','reward')
         );
-        //$xlsModel = M('Member');
+        $xlsModel = M('Resume');
 
-        //$xlsData  = $xlsModel->Field('id,truename,sex,res_id,sp_id,class,year,city,company,zhicheng,zhiwu,jibie,tel,qq,email,honor,remark')->select();
-        $xlsData = array(
-            array('id'=>1,'truename'=>33 , 'sex'=>1 ),
-            array('id'=>2,'truename'=>34 , 'sex'=>5 ),
-        );
+        $xlsData  = $xlsModel->Field('resumeid,userid,username,sex,mingzhu,hunyin,shenfen,jiguan,adress,telphone,email,edu,reward')->select();
 
         foreach ($xlsData as $k => $v)
         {

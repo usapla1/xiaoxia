@@ -102,8 +102,8 @@ var youdao_conv_id = 271546;
         <dd>
             <form id="searchForm">
               <input type="hidden" value="Publish" name="type">
-                <volist name="list" id="vo">
           <ul class="reset my_jobs">
+              <volist name="list" id="vo">
             <li data-id="{$vo.workid}">
                     <h3><a target="_blank" title="前端开发工程师" href="#">{$vo.work_title}</a><span>[{$vo.workaddress}]</span></h3>
                     <span class="receivedResumeNo">
@@ -111,13 +111,13 @@ var youdao_conv_id = 271546;
                     <div>{$vo.positionname}/ {$vo.salarymin}k-{$vo.salarymax}k / {$vo.workyear}年 / {$vo.education}及以上</div>
                     <div class="c9">投递时间： {$vo.create_time}</div>
             <div class="links">
-              <a class="job_refresh" href="javascript:void(0)">刷新<span>每个职位7天内只能刷新一次</span></a>
+              <a class="job_refresh" href="javascript:location.reload()">刷新<span>每个职位7天内只能刷新一次</span></a>
               <a target="_blank" class="job_edit" href="doedit/workid/{$vo.workid}">编辑</a>
               <a class="job_del" href="del/workid/{$vo.workid}">删除</a>
                     </div>
                 </li>
+              </volist>
               </ul>
-                </volist>
       </form>
     </dd>
     </dl>
