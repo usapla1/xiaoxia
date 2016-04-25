@@ -12,10 +12,6 @@ class RegisterController extends BaseController{
 	}
 	//注册操作
 	public function register(){
-		$verify = I('post.Verify');
-		if($this->check_verify($verify)){
-			$this->error("亲，验证码输错了哦！");
-		}
 		if(empty(I('post.email'))){
 			$this->error("亲，请输入登录邮箱！");
 		}
@@ -31,9 +27,6 @@ class RegisterController extends BaseController{
 		if(empty(I('post.repassword'))){
 			$this->error("亲，请输入重复密码！");
 		}
-		if(empty(I('post.Verify'))){
-			$this->error("亲，请输入验证码！");
-		}
 		$data = array();
 		$data['email'] = I('post.email');
 		$data['telphone'] = I('post.telphone');
@@ -41,7 +34,6 @@ class RegisterController extends BaseController{
 		$data['userdata'] = I('post.user_data');
 		$data['password'] = I('post.password');
 		$data['repassword'] = I('post.repassword');
-		$data['Verify'] = I('post.Verify');
 		if($data['password'] != $data['repassword']){
 			$this->error("亲，重复密码不一致");
 			//$this->ajaxReturn("repassword","重复密码不一致",false);

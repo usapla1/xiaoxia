@@ -22,6 +22,8 @@ class SeekerController extends BaseController{
         $map['user_id'] = $_SESSION['user_id'];
         $Users = M('Users');
         $list =  $Users->where($map)->find();
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
         $this->assign('list',$list);
         $this->display();
     }
@@ -45,6 +47,8 @@ class SeekerController extends BaseController{
         $data['telphone'] = I('post.telphone');
         $Users = M('Users');
         $list =  $Users->where($map)->find();
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
         $this->assign('list',$list);
         $this->display();
     }

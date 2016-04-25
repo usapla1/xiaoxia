@@ -13,15 +13,18 @@ use Home\Controller\Base;
 class MailController extends Controller{
 	//企业发送过的邮件主页
 	public function index(){
-/*		if(empty($_SESSION['user_id'])){
-		$this->ajaxReturn("Mail","请先登录",false);
+		if(empty($_SESSION['userid'])){
+		$this->error("请先登录");
 		}
-		if($_SESSION['role'] !== 2 ){
-			$this->ajaxReturn("Work","对不起，您没有权限进入该页面",false);
+		if($_SESSION['role'] != 2 ){
+			$this->error("对不起，您没有权限进入该页面");
 		}
-		$MailsmsDao = M('Mailsms');
-		$list = $MailsmsDao->join('cb_users ON cb_mailsms.user_id = cb_users.user_id')->order('add_time')->select();
-		$this->assign('list',$list);*/
+		$username = I('username1');
+		$email = I('email');
+		$user = $_SESSION['username'];
+		$this->assign('user',$user);
+		$this->assign('username',$username);
+		$this->assign('email',$email);
 		$this->display();
 	}
 

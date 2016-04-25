@@ -21,9 +21,11 @@ class UserController extends BaseController{
 			$this->error("对不起，您没有权限进入该页面".$_SESSION['role'],"http://127.0.0.1/newfish/index.php/Home/Login/index");
 		}
 		$map = array();
-		$map['user_id'] = $_SESSION['user_id'];
+		$map['userid'] = $_SESSION['userid'];
 		$UsersDao = M('Users');
 		$list =  $UsersDao->where($map)->find();
+		$user = $_SESSION['username'];
+		$this->assign('user',$user);
 		$this->assign('list',$list);
 		$this->display();
 	}
@@ -69,6 +71,8 @@ class UserController extends BaseController{
 		$SeekDao = M('Seek');
 		$list =  $SeekDao->where($map)->select();
 		$count = $SeekDao->where($map)->count();
+		$user = $_SESSION['username'];
+		$this->assign('user',$user);
 		$this->assign('list',$list);
 		$this->assign('count',$count);
 		$this->display();
@@ -89,6 +93,8 @@ class UserController extends BaseController{
 		$MailsmsDao = M('Mailsms');
 		$list = $MailsmsDao->join('cb_resume ON cb_mailsms.mail = cb_resume.email')->where($map)->select();
 		$count = $MailsmsDao->join('cb_resume ON cb_mailsms.mail = cb_resume.email')->where($map)->count();
+		$user = $_SESSION['username'];
+		$this->assign('user',$user);
 		$this->assign('list',$list);
 		$this->assign('count',$count);
 		$this->display();

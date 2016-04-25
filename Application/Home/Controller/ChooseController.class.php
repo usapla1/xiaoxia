@@ -23,6 +23,8 @@ class ChooseController extends BaseController{
         }
         $ResumeDao = M('Resume');
         $list = $ResumeDao->order('cb_resume.creat_time','DESC')->select();
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
         $this->assign('list', $list);
         $this->display();
     }
@@ -51,6 +53,8 @@ class ChooseController extends BaseController{
             $list = $ResumeDao->where($map)->select();
         }
         $this->assign('list', $list);
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
         $this->display();
     }
 

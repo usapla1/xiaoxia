@@ -27,6 +27,8 @@ class WorkController extends BaseController{
         $WorkDao = M('Work');
         $list =  $WorkDao->where($map)->limit(10)->select();
         $count =  $WorkDao->where($map)->count();
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
         $this->assign('list',$list);
         $this->assign('count',$count);
         $this->display();
@@ -43,7 +45,9 @@ class WorkController extends BaseController{
             $this->error("对不起，您没有权限进入该页面");
             //$this->ajaxReturn("Work","对不起，您没有权限进入该页面",false);
         }
-            $this->display();
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
+        $this->display();
     }
     //查看职位详情
     public function workinfo()
@@ -58,7 +62,8 @@ class WorkController extends BaseController{
         $map['workid'] = $workid;
         $WorkDao = M('Work');
         $list = $WorkDao->where($map)->find();
-
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
         $this->assign('list',$list);
         $this->display();
     }
@@ -69,13 +74,15 @@ class WorkController extends BaseController{
             $this->error("请先登录");
             //$this->ajaxReturn("Work","请先登录",false);
         }
-        if ($_SESSION['role'] != 1) {
+        if ($_SESSION['role'] != 2) {
             $this->error("对不起，您没有权限进入该页面");
             //$this->ajaxReturn("Work","对不起，您没有权限进入该页面",false);
         }
 
         $ResumeDao = M('Resume');
         $list = $ResumeDao->select();
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
         $this->assign('list',$list);
         $this->display();
     }
@@ -129,6 +136,8 @@ class WorkController extends BaseController{
         $map['workid'] = I('workid');
         $WorkDao = M('Work');
         $list =  $WorkDao->where($map)->find();
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
         $this->assign('list',$list);
         $this->display();
     }
@@ -249,6 +258,8 @@ class WorkController extends BaseController{
         $data = array();
         $data['is_see'] = 1;
         $result = M('Submit')->save($data);//查看简历
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
         $this->assign('list',$list);
         $this->display();
     }

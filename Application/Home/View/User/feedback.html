@@ -1,82 +1,36 @@
-<!DOCTYPE HTML>
-<html xmlns:wb="http://open.weibo.com/wb"><head>
-</script><script type="text/javascript" async="" src="{:C('Base_Url')}js/conversion.js"></script>
-	<script src="{:C('Base_Url')}js/allmobilize.min.js" charset="utf-8" id="allmobilize"></script>
-	<style type="text/css"></style>
-<meta content="no-siteapp" http-equiv="Cache-Control">
-<link  media="handheld" rel="alternate">
-<!-- end 云适配 -->
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>浙江新安化工集团网上招聘平台信息系统</title>
-<meta content="浙江新安化工集团网上招聘平台信息系统" name="description">
-<meta content="浙江新安化工集团网上招聘平台信息系统" name="keywords">
-<meta name="baidu-site-verification" content="QIQ6KC1oZ6" />
-
-<!-- <div class="web_root"  style="display:none">http://www.lagou.com</div> -->
-<script type="text/javascript">
-var ctx = "http://www.lagou.com";
-console.log(1);
-</script>
-<link href="http://www.lagou.com/images/favicon.ico" rel="Shortcut Icon">
-<link href="{:C('Base_Url')}css/style.css" type="text/css" rel="stylesheet">
-<link href="{:C('Base_Url')}css/external.min.css" type="text/css" rel="stylesheet">
-<link href="{:C('Base_Url')}css/popup.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="{:C('Base_Url')}js/jquery.1.10.1.min.js"></script>
-<script src="{:C('Base_Url')}js/jquery.lib.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="{:C('Base_Url')}js/ajaxfileupload.js"></script>
-<script src="{:C('Base_Url')}js/additional-methods.js" type="text/javascript"></script>
-<!--[if lte IE 8]>
-    <script type="text/javascript" src="{:C('Base_Url')}js/excanvas.js"></script>
-<![endif]-->
-<script type="text/javascript">
-var youdao_conv_id = 271546; 
-</script> 
-<script src="{:C('Base_Url')}js/conv.js" type="text/javascript"></script>
-<script src="{:C('Base_Url')}js/ajaxCross.json" charset="UTF-8"></script>
-<style type="text/css">
-
-</style>
-<link rel="stylesheet" href="{:C('Base_Url')}css/ui.css"><link rel="stylesheet" href="{:C('Base_Url')}css/window.css"></head>
-<body>
+<block name="include"><include file="Public:header3" /></block>
+<body style="background-image:url('/newfish/Public/images/6.jpg')">
 <div id="body">
 	<div id="header">
-    	<div class="wrapper">
-    		<a href="index.html" class="logo">
-                <img src="{:C('Base_Url')}images/logo.png" width="229" height="80" alt="新安招聘" />
-            </a>
-    		<ul id="navheader" class="reset">
-    			<li><a href="index.html">首页</a></li>
-    			<li><a href="enterprise.html">公司</a></li>
-	    		<li class="current"><a rel="nofollow" href="create.html">个人中心</a></li>
-	    	</ul>
-        	<dl class="collapsible_menu">
-            	<dt>
-           			<span>jason&nbsp;</span> 
-            		<span class="red dn" id="noticeDot-1"></span>
-            		<i></i>
-            	</dt>
-                <dd><a rel="nofollow" href="Individual.html">我的简历</a></dd>
-                <dd><a href="#">我投递的职位 <span id="noticeNo" class="red">(1)</span></a></dd>
-                <dd style="display: none;"><a href="accountBind.html">帐号设置</a></dd>
-                <dd class="logout" style="display: none;"><a rel="nofollow" href="login.html">退出</a></dd>
-            </dl>
-        </div>
-    </div><!-- end #header -->
-    <div id="container">
-    	<div class="sidebar">
-            <dl class="company_center_aside">
-                <dt><h3>个人中心</h3></dt>
-                <dd><a href="personal.html">个人信息</a></dd>
-                <dd><a href="Individual.html">我的简历</a></dd>
-                <dd><a href="Application.html">申请记录</a></dd>
-                <dd><a href="feedback.html">人事反馈</a></dd>
-            </dl>
-            <dl class="company_center_aside">
-                <dt><h3>帐号设置</h3></dt>
-                <dd><a href="accountBind.html">帐号绑定</a></dd>
-                <dd><a class="hover" href="updatePwd.html">修改密码</a></dd>
-            </dl>
-        </div><!-- end .sidebar -->
+		<div class="wrapper">
+			<a href="index.html" class="logo">
+				<img src="{:C('Base_Url')}images/logo.png" width="229" height="80" alt="新安招聘" />
+			</a>
+			<ul id="navheader" class="reset">
+				<li><a href="{:U('Index/index')}">首页</a></li>
+				<li class="current"><a rel="nofollow" href="{:U('User/index')}">个人中心</a></li>
+			</ul>
+			<dl class="collapsible_menu">
+				<dt>
+					<span>{$user}&nbsp;</span>
+					<span class="red dn" id="noticeDot-1"></span>
+					<i></i>
+				</dt>
+				<dd style="display: none;"><a href="{:U('Index/index')}">我要找工作</a></dd>
+				<dd class="logout" style="display: none;"><a rel="nofollow" href="{:U('Index/logout')}">退出</a></dd>
+			</dl>
+		</div>
+	</div><!-- end #header -->
+	<div id="container">
+		<div class="sidebar">
+			<dl class="company_center_aside">
+				<dt><h3>个人中心</h3></dt>
+				<dd><a href="{:U('User/index')}">个人信息</a></dd>
+				<dd><a href="{:U('Resume/index')}">我的简历</a></dd>
+				<dd><a href="{:U('User/apply')}">申请记录</a></dd>
+				<dd><a href="{:U('User/feedback')}">人事反馈</a></dd>
+			</dl>
+		</div><!-- end .sidebar -->
 <div class="content">
     <dl class="company_center_content">
         <dt>

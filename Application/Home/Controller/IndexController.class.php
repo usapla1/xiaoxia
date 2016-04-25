@@ -9,6 +9,8 @@ class IndexController extends BaseController{
         $Works = M('Work');
         $lists2 = $Works->select();
         $count = $Works->count();
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
         $this->assign('count',$count);
         $this->assign('lists2',$lists2);
         $this->display();
@@ -21,6 +23,8 @@ class IndexController extends BaseController{
         $Works = M('Work');
         $lists2 = $Works->select();
         $count = $Works->count();
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
         $this->assign('lists2',$lists2);
         $this->assign('count',$count);
         $this->display();
@@ -48,11 +52,19 @@ class IndexController extends BaseController{
         $data['resume_id'] = $result1['resume_id'];
         $data['is_see'] = 0;
         $result2 = M('Submit')->add($data);//查看简历
+
         if(!empty($result2)){
             $this->ajaxReturn("Index","投递成功",true);
         }else{
             $this->ajaxReturn("Index","无法向该岗位投递简历",false);
         }
+    }
+
+    //退出系统
+    public function logout(){
+        session_start();
+        session_destroy();
+        $this->success("已经成功退出，请关闭管理页面","http://127.0.0.1/newfish/index.php");
     }
     /**
      * 返回给 DataTable 的接口

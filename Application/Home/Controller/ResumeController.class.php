@@ -25,6 +25,8 @@ class ResumeController extends BaseController{
         $map['userid'] = $_SESSION['userid'];
         $ResumeDao = M('Resume');
         $list =  $ResumeDao->where($map)->find();
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
         $this->assign('list',$list);
         $this->display();
     }
@@ -105,7 +107,8 @@ class ResumeController extends BaseController{
         $map['resumeid'] = I('resumeid');
         $ResumeDao = M('Resume');
         $list = $ResumeDao->where($map)->find();
-
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
         $this->assign('list',$list);
         $this->display();
     }
