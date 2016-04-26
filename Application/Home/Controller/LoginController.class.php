@@ -22,7 +22,7 @@ class LoginController extends BaseController{
         session_start();
         $map = array();
         $map['email'] = I('post.email');
-        $map['password'] = I('post.password');
+        $map['repassword'] = I('post.password');
         $Users = M('Users');
         $result =  $Users->where($map)->find();
         if(!empty($result)){

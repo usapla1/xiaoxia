@@ -141,4 +141,39 @@ class UserController extends BaseController{
 			$this->error("删除失败");
 		}
 	}
+	//删除求职记录
+	public function uppwd()
+	{
+		if(empty($_SESSION['userid'])){
+			$this->error("对不起，请先登录","http://127.0.0.1/newfish/index.php/Home/Login/index");
+		}
+		if($_SESSION['role'] != 1 ){
+			$this->error("对不起，您没有权限进入该页面".$_SESSION['role'],"http://127.0.0.1/newfish/index.php/Home/Login/index");
+		}
+		$repassword = I('repassword');
+		$this->assign('repassword',$repassword);
+		$this->display();
+	}
+	//修改密码
+	public function updatepwd()
+	{
+		if(empty($_SESSION['userid'])){
+			$this->error("对不起，请先登录","http://127.0.0.1/newfish/index.php/Home/Login/index");
+		}
+		if($_SESSION['role'] != 1 ){
+			$this->error("对不起，您没有权限进入该页面".$_SESSION['role'],"http://127.0.0.1/newfish/index.php/Home/Login/index");
+		}
+		$repassword = I('repassword');
+		$map = array();
+		$map['userid'] = $_SESSION['userid'];
+		$data = array();
+		$UsersDao = M('Users');
+		$UsersDao->repassword = $repassword;
+		$result = $UsersDao->where($map)->save();
+		if(!empty($result)){
+			$this->success("修改成功","http://127.0.0.1/newfish/index.php/Home/User/index");
+		}else{
+			$this->error("修改失败");
+		}
+	}
 }

@@ -10,6 +10,16 @@ class IndexController extends BaseController{
         $lists2 = $Works->select();
         $count = $Works->count();
         $user = $_SESSION['username'];
+        $Seek = M('Seek');
+        $list = array();
+        foreach($lists2 as $key=>$value){
+            $map = array();
+            $map['workid'] =$value['workid'];
+            $count = $Seek->where($map)->count();
+            $value['count'] = $count;
+            $list[] = $value;
+        }
+        $lists2 = $list;
         $this->assign('user',$user);
         $this->assign('count',$count);
         $this->assign('lists2',$lists2);

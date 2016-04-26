@@ -12,21 +12,6 @@ class RegisterController extends BaseController{
 	}
 	//注册操作
 	public function register(){
-		if(empty(I('post.email'))){
-			$this->error("亲，请输入登录邮箱！");
-		}
-		if(empty(I('post.telphone'))){
-			$this->error("亲，请输入手机号！");
-		}
-		if(empty(I('post.username'))){
-			$this->error("亲，请输入真实姓名！");
-		}
-		if(empty(I('post.password'))){
-			$this->error("亲，请输入密码！");
-		}
-		if(empty(I('post.repassword'))){
-			$this->error("亲，请输入重复密码！");
-		}
 		$data = array();
 		$data['email'] = I('post.email');
 		$data['telphone'] = I('post.telphone');
@@ -36,7 +21,6 @@ class RegisterController extends BaseController{
 		$data['repassword'] = I('post.repassword');
 		if($data['password'] != $data['repassword']){
 			$this->error("亲，重复密码不一致");
-			//$this->ajaxReturn("repassword","重复密码不一致",false);
 		}
 		$Users = M('Users');
 		$map = array();
@@ -44,7 +28,6 @@ class RegisterController extends BaseController{
 		$result1 =  $Users->where($map)->find();
 		if(!empty($result1)){
 			$this->error("亲，注册失败,账号已经存在");
-			//$this->ajaxReturn("register","注册成功",true);
 		}
 		$result =  $Users->add($data);
 		if(!empty($result)){
@@ -60,10 +43,8 @@ class RegisterController extends BaseController{
 			}else{
 				$this->error("亲，简历初始化失败");
 			}
-			//$this->ajaxReturn("register","注册成功",true);
 		}else{
 			$this->error("亲，注册失败");
-			//$this->ajaxReturn("register","注册失败",true);
 		}
 	}
 

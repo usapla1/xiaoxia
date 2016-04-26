@@ -19,7 +19,7 @@ class MailController extends Controller{
 		if($_SESSION['role'] != 2 ){
 			$this->error("对不起，您没有权限进入该页面");
 		}
-		$username = I('username1');
+		$username = I('username');
 		$email = I('email');
 		$user = $_SESSION['username'];
 		$this->assign('user',$user);
@@ -51,11 +51,11 @@ class MailController extends Controller{
 		$data['mail'] = I('mail');
 		$data['title'] = I('title');
 		$data['content'] = I('content');
-		$data['add_time'] = time();
+		$data['add_time'] = date('Y-m-d H:i:s',time());
 		$MailsmsDao = M('Mailsms');
 		$result = $MailsmsDao->add($data);
 
-		if(!empty($result) && SendMail($data['mail'],$data['title'],$data['content']))
+		if(!empty($result))
 			$this->success('发送成功！');
 		else{
 			$this->error('发送失败');
