@@ -41,10 +41,10 @@
                     <a href="{:U('Work/index')}">职位列表</a>
                 </dd>
                 <dd>
-                    <a href="{:U('Seeker/index')}">简历筛选</a>
+                    <a href="{:U('Work/workchose')}">简历筛选</a>
                 </dd>
                 <dd>
-                    <a href="{:U('Mail/index')}">面试通知</a>
+                    <a href="{:U('Mail/allmail')}">面试通知</a>
                 </dd>
             </dl>
         </div>
@@ -119,16 +119,15 @@
                                 <tr>
                                     <td>职位简介：</td>
                                     <td id="pdes">
-                                        <p>公司现因运营需要，特向社会招聘财务助理、会计各2名，<br/>优秀应届生也欢迎加入。。。
-                                        要求如下：<br/>工作内容：<br/>1.每月核算门店及公司工资
-                                        <br/>2.门店财务对接<br/>3.报销</p>
+                                        <p>公司现因运营需要，特向社会招聘{$list.work_title},{$list.work_num}名，<br/>{$list.education}也欢迎加入。。。
+                                        <p>职位诱惑如下：{$list.temptation}</p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>职位要求：</td>
                                     <td id="pask">
                                         <p>
-                                            任职资格：<br/>1、认真细致，爱岗敬业，吃苦耐劳，服从领导，有良好的职业操守；<br/>2、思维敏捷，接受能力强，能独立思考，善于总结工作经验；<br/>3、熟练应用财务及Office办公软件；<br/>4、具有良好的沟通能力；<br/>5、有会计从业资格证书。</p>
+                                            任职资格：<br/>1、学历{$list.education}以上；<br/><br/>2、工作{$list.workyear}以上；<br/>3、热情大方，态度良好。</p>
                                     </td>
                                 </tr>
                             </tbody>

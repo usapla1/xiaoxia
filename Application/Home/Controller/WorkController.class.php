@@ -50,6 +50,28 @@ class WorkController extends BaseController{
         $this->display();
     }
     //查看职位详情
+    public function workneed()
+    {
+        if (empty($_SESSION['userid'])) {
+            $this->error("请先登录");
+            //$this->ajaxReturn("Work","请先登录",false);
+        }
+        if ($_SESSION['role'] != 2) {
+            $this->error("对不起，您没有权限进入该页面","http://127.0.0.1/newfish/index.php/Home/Index/index");
+        }
+        $workid = I('workid');
+        $map = array();
+        $map['cb_seek.workid'] = $workid;
+        $SeekDao = M('Seek');
+        $list =$SeekDao->join('cb_resume ON cb_seek.userid = cb_resume.userid')->where($map)->select();
+        $count =$SeekDao->join('cb_resume ON cb_seek.userid = cb_resume.userid')->where($map)->count();
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
+        $this->assign('list',$list);
+        $this->assign('count',$count);
+        $this->display();
+    }
+    //查看职位详情
     public function workinfo()
     {
         if (empty($_SESSION['userid'])) {
@@ -80,10 +102,13 @@ class WorkController extends BaseController{
         }
 
         $ResumeDao = M('Resume');
-        $list = $ResumeDao->select();
+
+        $list = $ResumeDao->join('cb_seek ON cb_resume.userid = cb_seek.userid')->select();
+        $count = $ResumeDao->join('cb_seek ON cb_resume.userid = cb_seek.userid')->count();
         $user = $_SESSION['username'];
         $this->assign('user',$user);
         $this->assign('list',$list);
+        $this->assign('count',$count);
         $this->display();
     }
     //新增职位

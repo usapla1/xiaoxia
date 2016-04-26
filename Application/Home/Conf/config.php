@@ -12,10 +12,10 @@ return array(
 
     'DB_TYPE'                   => 'mysqli',
     'DB_HOST'                   => '127.0.0.1',
-    'DB_PORT'                   => 3306,//19306
+    'DB_PORT'                   => 3306,//19306//3306
     'DB_NAME'                   => 'xiaoxia',
     'DB_USER'                   => 'root',
-    'DB_PWD'                    => 'root',//j33mqXT5ARXXuP5w
+    'DB_PWD'                    => 'root',//j33mqXT5ARXXuP5w//root
     'DB_PREFIX'                 => 'cb_',
     'DB_DEBUG'                  =>  TRUE, // 数据库调试模式 开启后可以记录SQL日志 3.2.3新增
 

@@ -6,13 +6,15 @@
     		<a  href="{:U('Index/index')}" class="logo">
     			<img src="{:C('Base_Url')}images/logo.png" width="229" height="80" alt="新安招聘" />
     		</a>
-    		<div class="searchBox">
+    		<div class="searchBox" >
     			<form id="searchForm" name="searchForm" action="http://127.0.0.1/newfish/index.php/Home/Index/search/" method="get">
 			        <input type="text" id="search_input" name = "work_title"  tabindex="1" value=""  placeholder="请输入职位名称，如：产品经理"  />
 	                <input type="submit" id="search_button" value="搜索" />
 	            </form>
+
     		</div>
         </div>
+		<input type="button" id="search_button" value="个人中心"  style="margin-top: -35px;" onclick="location='{:U('Index/come')}'"/>
     </div><!-- end #header -->
 	<div id="container" >
 		<div id="sidebar">
@@ -90,7 +92,7 @@
 		                            <span>[{$vo.workaddress}]</span>
 		                        </h3>
 		                        <span class="receivedResumeNo">
-		                            <a href="unHandleResumes.html?positionId=149594">应聘简历({$vo.count})</a>
+		                            <a href="http://127.0.0.1/newfish/index.php/Home/Work/workneed/workid/{$vo.workid}">应聘简历({$vo.count})</a>
 		                        </span>
 		                        <div>{$vo.positionname}/ {$vo.salarymin}k-{$vo.salarymax}k / {$vo.workyear}年 / {$vo.education}及以上</div>
 		                        <div class="c9">发布时间： {$vo.create_time}</div>

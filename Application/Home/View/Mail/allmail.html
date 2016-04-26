@@ -29,7 +29,7 @@
             </dl>
         </div>
     </div>
-   <!-- end #header -->
+    <!-- end #header -->
     <div id="container">
         <div class="sidebar">
             <a class="btn_create" href="{:U('Work/create')}">发布新职位</a>
@@ -44,42 +44,40 @@
                     <a href="{:U('Work/workchose')}">简历筛选</a>
                 </dd>
                 <dd>
-                    <a href="{:U('Mail/allmail')}">面试通知</a>
+                    <a href="{:U('Mail/index')}">面试通知</a>
                 </dd>
             </dl>
         </div>
-    <!-- end .sidebar --> 
-    <div class="content">
-    <dl class="company_center_content">
-        <dt>
-            <h1><em></em>职位列表 <span>（共<i style="color:#fff;font-style:normal" id="positionNumber">{$count}</i>个）</span></h1>
-        </dt>
-        <dd>
-            <form id="searchForm">
-              <input type="hidden" value="Publish" name="type">
-          <ul class="reset my_jobs">
-              <volist name="list" id="vo">
-            <li data-id="{$vo.workid}">
-                    <h3><a target="_blank"  href="http://127.0.0.1/newfish/index.php/Home/Work/workinfo/workid/{$vo.workid}">{$vo.work_title}</a><span>[{$vo.workaddress}]</span></h3>
+        <!-- end .sidebar -->
+        <div class="content">
+            <dl class="company_center_content">
+                <dt>
+                <h1><em></em>发送面试列表 <span>（共<i style="color:#fff;font-style:normal" id="positionNumber">{$count}</i>个）</span></h1>
+                </dt>
+                <dd>
+                    <form id="searchForm">
+                        <input type="hidden" value="Publish" name="type">
+                        <ul class="reset my_jobs">
+                            <volist name="list" id="vo">
+                                <li data-id="{$vo.workid}">
+                                    <h3>{$vo.title}</h3>
                     <span class="receivedResumeNo">
             </span>
-                    <div>{$vo.positionname}/ {$vo.salarymin}k-{$vo.salarymax}k / {$vo.workyear}年 / {$vo.education}及以上</div>
-                    <div class="c9">投递时间： {$vo.create_time}</div>
-            <div class="links">
-              <a class="job_refresh" href="javascript:location.reload()">刷新<span>每个职位7天内只能刷新一次</span></a>
-              <a target="_blank" class="job_edit" href="doedit/workid/{$vo.workid}">编辑</a>
-              <a class="job_del" href="del/workid/{$vo.workid}">删除</a>
-                    </div>
-                </li>
-              </volist>
-              </ul>
-      </form>
-    </dd>
-    </dl>
-</div><!-- end .content -->
-<script src="{:C('Base_Url')}js/job_list.min.js" type="text/javascript"></script>
-      <div class="clear"></div>
+                                    <div>收件人姓名：{$vo.username}/ 邮箱{$vo.mail} / 职位名{$vo.workname} / 内容：{$vo.content}</div>
+                                    <div class="c9">投递时间： {$vo.add_time}</div>
+                                    <div class="links">
+                                        <a class="job_del" href="http://127.0.0.1/newfish/index.php?s=/Home/Mail/del/mailsmsid/{$vo.mailsmsid}">删除</a>
+                                    </div>
+                                </li>
+                            </volist>
+                        </ul>
+                    </form>
+                </dd>
+            </dl>
+        </div><!-- end .content -->
+        <script src="{:C('Base_Url')}js/job_list.min.js" type="text/javascript"></script>
+        <div class="clear"></div>
         <a rel="nofollow" title="回到顶部" id="backtop"></a>
-      </div><!-- end #container -->
-  </div><!-- end #body -->
+    </div><!-- end #container -->
+</div><!-- end #body -->
 <block name="include"><include file="Public:footer3" /></block>

@@ -1,0 +1,121 @@
+<block name="include"><include file="Public:header5" /></block>
+<body style="background-image:url('/newfish/Public/images/6.jpg')">
+<div id="body">
+    <div id="header">
+        <div class="wrapper">
+            <a class="logo" href="index.html"> <img width="229" height="43" alt="新安招聘" src="{:C('Base_Url')}images/logo.png" /> </a>
+            <ul id="navheader" class="reset">
+                <li><a href="{:U('Index/index')}">首页</a></li>
+                <li class="current"><a rel="nofollow" href="{:U('Work/index')}">职位管理</a></li>
+            </ul>
+            <dl class="collapsible_menu">
+                <dt>
+                    <span>{$user}&nbsp;</span>
+                    <span class="red dn" id="noticeDot-1"></span>
+                    <i></i>
+                </dt>
+                <dd style="display: none;">
+                    <a href="{:U('Work/index')}">我发布的职位</a>
+                </dd>
+                <dd style="display: none;">
+                    <a href="{:U('Work/workchose')}">我收到的简历</a>
+                </dd>
+                <dd class="btm" style="display: none;">
+                    <a href="{:U('Index/index')}">我的公司主页</a>
+                </dd>
+                <dd class="logout" style="display: none;">
+                    <a rel="nofollow" href="{:U('Index/logout')}">退出</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <!-- end #header -->
+    <div id="container">
+        <div class="sidebar">
+            <a class="btn_create" href="{:U('Work/create')}">发布新职位</a>
+            <dl class="company_center_aside">
+                <dt>
+                    职位管理
+                </dt>
+                <dd>
+                    <a href="{:U('Work/index')}">职位列表</a>
+                </dd>
+                <dd>
+                    <a href="{:U('Work/workchose')}}">简历筛选</a>
+                </dd>
+                <dd>
+                    <a href="{:U('Mail/allmail')}">面试通知</a>
+                </dd>
+            </dl>
+        </div>
+        <!-- end .sidebar -->
+        <div class="content">
+            <dl class="company_center_content">
+                <dt>
+                <h1>
+                    应聘简历列表<span>（共{$count}份）</span>
+                </h1>
+                </dt>
+                <dd>
+                    <form action="canInterviewResumes.html" method="get" id="filterForm">
+                        <ul class="reset resumeLists">
+                            <volist name="list" id="vo">
+                                <li data-id="1686182" class="onlineResume">
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        <i>
+                                        </i>
+                                    </label>
+                                    <div class="resumeShow">
+                                        <a title="预览在线简历" target="_blank" class="resumeImg" href="#">
+                                        </a>
+                                        <div class="resumeIntro">
+                                            <h3 class="unread">
+                                                <a target="_blank" title="预览{$vo.username}的简历" href="http://127.0.0.1/newfish/index.php/Home/Resume/online/resumeid/{$vo.resumeid}">
+                                                    {$vo.username}的简历
+                                                </a>
+                                                <em>
+                                                </em>
+                                            </h3>
+                                            <div>
+                                                {$vo.username} /{$vo.sex} / {$vo.edu} / {$vo.work} 年 / {$vo.adress}
+                                                <br>
+                                                {$vo.hopework}
+                                            </div>
+                                            <div class="jdpublisher">
+                          <span>
+                            应聘职位：
+                            <a title="随便写" target="_blank" href="#">
+                                {$vo.hopework}
+                            </a>
+                          </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="contactInfo">
+                      <span class="c9">
+                        电话：
+                      </span>
+                                        {$vo.telphone} &nbsp;&nbsp;&nbsp;
+                      <span class="c9">
+                        邮箱：
+                      </span>
+                                        <a href="{$vo.email}">
+                                            {$vo.email}
+                                        </a>
+                                    </div>
+                                </li>
+                            </volist>
+                        </ul>
+                        <!-- end .resumeLists -->
+                    </form>
+                </dd>
+            </dl>
+            <!-- end .company_center_content -->
+        </div><!-- end .content -->
+        <script src="{:C('Base_Url')}js/job_list.min.js" type="text/javascript"></script>
+        <div class="clear"></div>
+        <a rel="nofollow" title="回到顶部" id="backtop"></a>
+    </div><!-- end #container -->
+</div><!-- end #body -->
+<block name="include"><include file="Public:footer3" /></block>

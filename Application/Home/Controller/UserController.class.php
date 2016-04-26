@@ -91,8 +91,8 @@ class UserController extends BaseController{
 		$map = array();
 		$map['cb_resume.userid'] = $userid;
 		$MailsmsDao = M('Mailsms');
-		$list = $MailsmsDao->join('cb_resume ON cb_mailsms.mail = cb_resume.email')->where($map)->select();
-		$count = $MailsmsDao->join('cb_resume ON cb_mailsms.mail = cb_resume.email')->where($map)->count();
+		$list = $MailsmsDao->join('cb_resume ON cb_mailsms.username = cb_resume.username')->where($map)->select();
+		$count = $MailsmsDao->join('cb_resume ON cb_mailsms.username = cb_resume.username')->where($map)->count();
 		$user = $_SESSION['username'];
 		$this->assign('user',$user);
 		$this->assign('list',$list);
@@ -164,6 +164,10 @@ class UserController extends BaseController{
 			$this->error("对不起，您没有权限进入该页面".$_SESSION['role'],"http://127.0.0.1/newfish/index.php/Home/Login/index");
 		}
 		$repassword = I('repassword');
+		$password = I('password');
+		if($repassword != $password){
+			$this->error("修改失败");
+		}
 		$map = array();
 		$map['userid'] = $_SESSION['userid'];
 		$data = array();
@@ -173,7 +177,7 @@ class UserController extends BaseController{
 		if(!empty($result)){
 			$this->success("修改成功","http://127.0.0.1/newfish/index.php/Home/User/index");
 		}else{
-			$this->error("修改失败");
+
 		}
 	}
 }

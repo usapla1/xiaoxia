@@ -16,8 +16,8 @@
             		<span class="red dn" id="noticeDot-1"></span>
             		<i></i>
             	</dt>
-				<dd style="display: none;"><a href="{:U('Index/index')}">我要找工作</a></dd>
-				<dd class="logout" style="display: none;"><a rel="nofollow" href="{:U('Index/logout')}">退出</a></dd>
+				<dt style="display: none;"><a href="{:U('Index/index')}">我要找工作</a></dt>
+				<dt class="logout" style="display: none;"><a rel="nofollow" href="{:U('Index/logout')}">退出</a></dt>
             </dl>
         </div>
     </div><!-- end #header -->
@@ -42,18 +42,16 @@
 			    <ul class="reset my_jobs">
 					<volist name="list" id="vo">
 				    <li data-id="149594">
-		                <h3><a target="_blank" title="前端开发工程师" href="positionDetail.html?pid=i">{$vo.work_title}</a></h3>
+		                <h3><a target="_blank" class="job_edit" href="http://127.0.0.1/newfish/index.php/Home/Work/workinfo/workid/{$vo.workid}">{$vo.work_title}</a></h3>
 		                <span class="receivedResumeNo">
 							是否查看:<if condition="$vo.is_look eq 1 ">已查看
 							<else /> <strong>未查看</strong>
 						</if>
-
-
 						</span>
 		                <div class="c9">投递时间： {$vo.create_time}</div>
 						<div class="links">
 							<a class="job_refresh" href="javascript:location.reload()">刷新<span>每个职位7天内只能刷新一次</span></a>
-							<a target="_blank" class="job_edit" href="http://127.0.0.1/newfish/index.php/Home/Work/show/workid/{$vo.workid}">查看详情</a>
+							<a target="_blank" class="job_edit" href="http://127.0.0.1/newfish/index.php/Home/Work/workinfo/workid/{$vo.workid}">查看详情</a>
 							<a class="job_del" href="http://127.0.0.1/newfish/index.php/Home/User/apdel/seekid/{$vo.seekid}">删除</a>
 		                </div>
 		            </li>
@@ -63,7 +61,7 @@
 		</dd>
     </dl>
 </div><!-- end .content -->
-<script src="style/js/job_list.min.js" type="text/javascript"></script> 
+<script src="style/js/job_list.min.js" type="text/javascript"></script>
 			<div class="clear"></div>
 			<input type="hidden" value="74fb1ce14ebf4e2495270b0fbad64704" id="resubmitToken">
 	    	<a rel="nofollow" title="回到顶部" id="backtop"></a>

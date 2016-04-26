@@ -29,10 +29,10 @@ class IndexController extends BaseController{
     public function search(){
         $map = array();
         $work_title = I('work_title');
-        $map["work_title"] = array("like","%".$work_title);
+        $map["work_title"] = array('like','%'.$work_title.'%');
         $Works = M('Work');
-        $lists2 = $Works->select();
-        $count = $Works->count();
+        $lists2 = $Works->where($map)->select();
+        $count = $Works->where($map)->count();
         $user = $_SESSION['username'];
         $this->assign('user',$user);
         $this->assign('lists2',$lists2);
@@ -68,6 +68,18 @@ class IndexController extends BaseController{
         }else{
             $this->ajaxReturn("Index","无法向该岗位投递简历",false);
         }
+    }
+
+    //退出系统
+    public function come(){
+        if($_SESSION['role'] == 1 ){
+            $this->success("欢迎回来","http://127.0.0.1/newfish/index.php/Home/User/index");
+        }elseif($_SESSION['role'] == 2){
+            $this->success("欢迎回来","http://127.0.0.1/newfish/index.php/Home/Work/index");
+        }else{
+            $this->success("请先登录","http://127.0.0.1/newfish/index.php/Home/Index/index");
+        }
+
     }
 
     //退出系统
