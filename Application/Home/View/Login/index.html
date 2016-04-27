@@ -9,9 +9,11 @@
         	<form id="loginForm" action="{:U('Login/login')}" method="POST">
 				<input type="text" id="email" name="email" value="" tabindex="1" placeholder="请输入登录邮箱地址" />
 			  	<input type="password" id="password" name="password" tabindex="2" placeholder="请输入密码" />
+			  	<input type="text" name="verify" tabindex="3" id="password"  value=""/>
+				<img src="{:U('Login/verify_c')}"><br/>
 				<span class="error" style="display:none;" id="beError"></span>
 			    <label class="fl" for="remember"><input type="checkbox" id="remember" value="" checked="checked" name="autoLogin" /> 记住我</label>
-			    <a href="{:U('register/index')}" class="fr" target="_blank">忘记密码？</a>
+			    <!--<a href="{:U('register/index')}" class="fr" target="_blank">忘记密码？</a>-->
 				<input type="submit" class="submitLogin" id="submitLogin" value="登 &nbsp; &nbsp; 录" />
 			</form>
 			<div class="login_right">

@@ -80,6 +80,14 @@ class ResumeController extends BaseController{
         if($result1){
             $this->error("亲，简历投递失败，您已经投过了");
         }
+        $Resume = M('Resume');
+        $map = array();
+        $map['userid'] = $_SESSION['userid'];
+        $result2= $Resume->field('sex,mingzhu,hunyin')->where($map)->find();
+
+        if(empty($result2['sex'])||empty($result2['mingzhu'])||empty($result2['hunyin'])){
+            $this->error("亲，请先完善简历");
+        }
         $Seek = M('Seek');
         $data = array();
         $data['workid'] = I('post.workid');
