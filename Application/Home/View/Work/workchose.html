@@ -53,34 +53,23 @@
           <dl class="company_center_content">
             <dt>
               <h1>
-                <em>
-                </em>
                 简历筛选
                 <span>
                   （共{$count}份）
                 </span>
               </h1>
-              <a href="{:U('Choose/expUser')}">导出excel</a>
+              <span><a href="{:U('Choose/expUser')}">导出excel</a></span>
             </dt>
             <dd>
-              <form action="canInterviewResumes.html" method="get" id="filterForm">
                 <div class="filter_actions">
                   <label class="checkbox">
-                    <input type="checkbox">
-                    <i>
-                    </i>
                   </label>
                   <span>
                     全选
                   </span>
-                  <a id="jlsearch" href="javascript:;">
-                    筛选
-                  </a>
-                  <div id="filter_btn" class="">
-                    筛选简历
-                    <em class="">
-                    </em>
-                  </div>
+                     <a href="http://127.0.0.1/newfish/index.php?s=/Home/Work/workchosesend">
+                         筛选
+                    </a>
                 </div>
                 <!-- end .filter_actions -->
                 <!-- end .filter_options -->
@@ -110,14 +99,17 @@
                         <div class="jdpublisher">
                           <span>
                             应聘职位：
-                            <a title="随便写" target="_blank" href="#">
+                            <a title="随便写" target="_blank" href="http://127.0.0.1/newfish/index.php?s=/Home/Work/send">
                                 {$vo.hopework}
                             </a>
                           </span>
                         </div>
                       </div>
                       <div class="links">
-                        <a class="resume_notice" href="http://127.0.0.1/newfish/index.php?s=/Home/Mail/index/username/{$vo.username}/email/{$vo.email}/seekid/{$vo.seekid}">
+                          <a target="_blank" href="http://127.0.0.1/newfish/index.php?s=/Home/Work/send">
+                              发送感谢
+                          </a>
+                        <a class="resume_notice" href="http://127.0.0.1/newfish/index.php?s=/Home/Mail/index/username/{$vo.username}/email/{$vo.email}/seekid/{$vo.seekid}/address/{$vo.address}">
                           通知面试
                         </a>
                       </div>
@@ -138,7 +130,6 @@
                     </volist>
                 </ul>
                 <!-- end .resumeLists -->
-              </form>
             </dd>
           </dl>
           <!-- end .company_center_content -->

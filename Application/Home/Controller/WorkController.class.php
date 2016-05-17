@@ -33,7 +33,18 @@ class WorkController extends BaseController{
         $this->assign('count',$count);
         $this->display();
     }
-
+    public function send()
+    {
+        if (empty($_SESSION['userid'])) {
+            $this->error("请先登录");
+            //$this->ajaxReturn("Work","请先登录",false);
+        }
+        if ($_SESSION['role'] != 2) {
+            $this->error("对不起，您没有权限进入该页面1" . $_SESSION['role'], "http://127.0.0.1/newfish/index.php/Home/Login/index");
+            //$this->ajaxReturn("Work","对不起，您没有权限进入该页面",false);
+        }
+        $this->success("发送感谢成功");
+    }
     //新增职位
     public function creat()
     {
@@ -90,6 +101,28 @@ class WorkController extends BaseController{
         $this->display();
     }
     //职位筛选
+    public function workchosesend()
+    {
+        if (empty($_SESSION['userid'])) {
+            $this->error("请先登录");
+            //$this->ajaxReturn("Work","请先登录",false);
+        }
+        if ($_SESSION['role'] != 2) {
+            $this->error("对不起，您没有权限进入该页面");
+            //$this->ajaxReturn("Work","对不起，您没有权限进入该页面",false);
+        }
+        $ResumeDao = M('Resume');
+        $map = array();
+        $map['sex'] = '女';
+        $list = $ResumeDao->join('cb_seek ON cb_resume.userid = cb_seek.userid')->where($map)->select();
+        $count = $ResumeDao->join('cb_seek ON cb_resume.userid = cb_seek.userid')->where($map)->count();
+        $user = $_SESSION['username'];
+        $this->assign('user',$user);
+        $this->assign('list',$list);
+        $this->assign('count',$count);
+        $this->display(workchose);
+    }
+    //职位筛选
     public function workchose()
     {
         if (empty($_SESSION['userid'])) {
@@ -100,9 +133,7 @@ class WorkController extends BaseController{
             $this->error("对不起，您没有权限进入该页面");
             //$this->ajaxReturn("Work","对不起，您没有权限进入该页面",false);
         }
-
         $ResumeDao = M('Resume');
-
         $list = $ResumeDao->join('cb_seek ON cb_resume.userid = cb_seek.userid')->select();
         $count = $ResumeDao->join('cb_seek ON cb_resume.userid = cb_seek.userid')->count();
         $user = $_SESSION['username'];

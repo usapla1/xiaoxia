@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50538
 File Encoding         : 65001
 
-Date: 2016-04-26 15:22:24
+Date: 2016-05-17 19:37:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -27,12 +27,38 @@ CREATE TABLE `cb_mailsms` (
   `title` varchar(50) NOT NULL DEFAULT '0',
   `content` varchar(50) NOT NULL DEFAULT '0',
   `add_time` varchar(250) DEFAULT NULL,
+  `date` varchar(50) DEFAULT NULL,
+  `workaddress` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`mailsmsid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cb_mailsms
 -- ----------------------------
+INSERT INTO `cb_mailsms` VALUES ('1', '1', 'root444', '', '4', '5', '2016-05-17 19:29:11', '2016-05-19', '上海');
+
+-- ----------------------------
+-- Table structure for `cb_more`
+-- ----------------------------
+DROP TABLE IF EXISTS `cb_more`;
+CREATE TABLE `cb_more` (
+  `moreid` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `userid` varchar(50) NOT NULL,
+  `resumeid` varchar(50) NOT NULL,
+  `mail` text NOT NULL,
+  `edu` text,
+  `work` text,
+  `reward` text,
+  `skill` text,
+  `selftalk` text,
+  `hopework` text,
+  PRIMARY KEY (`moreid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of cb_more
+-- ----------------------------
+INSERT INTO `cb_more` VALUES ('1', '3', '1', '', 'ffffddd', 'ggh', 'gggfff', 'h', 'h', 'h');
 
 -- ----------------------------
 -- Table structure for `cb_resume`
@@ -62,9 +88,9 @@ CREATE TABLE `cb_resume` (
 -- ----------------------------
 -- Records of cb_resume
 -- ----------------------------
-INSERT INTO `cb_resume` VALUES ('1', '3', 'root', '2', '2', '2', '2', '2', '333', '123456', '4444', '2', '2', '2', 'skill', '1', '1');
-INSERT INTO `cb_resume` VALUES ('2', '4', '3333', null, null, null, null, null, null, '18958063477', '1@qq.com', null, null, null, null, null, null);
-INSERT INTO `cb_resume` VALUES ('3', '5', 'dad222', null, null, null, null, null, null, '1111', '123456@qq.com', null, null, null, null, null, null);
+INSERT INTO `cb_resume` VALUES ('1', '3', 'root444', '女', '2', '2', '255555555555', '2', '333', '123456', '44444', '', '', '', '', '', '');
+INSERT INTO `cb_resume` VALUES ('2', '4', '3333', '女', null, null, null, null, null, '18958063477', '1@qq.com', null, null, null, null, null, null);
+INSERT INTO `cb_resume` VALUES ('3', '5', 'dad222', '女', null, null, null, null, null, '1111', '123456@qq.com', null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for `cb_seek`
@@ -84,7 +110,7 @@ CREATE TABLE `cb_seek` (
 -- ----------------------------
 -- Records of cb_seek
 -- ----------------------------
-INSERT INTO `cb_seek` VALUES ('12', '3', '2', '1', '0', '2016-04-26 15:05:40', '2016-04-26 15:05:40');
+INSERT INTO `cb_seek` VALUES ('12', '3', '2', '1', '1', '2016-04-26 15:05:40', '2016-04-26 15:05:40');
 
 -- ----------------------------
 -- Table structure for `cb_users`
@@ -132,10 +158,11 @@ CREATE TABLE `cb_work` (
   `create_time` varchar(250) DEFAULT NULL,
   `update_time` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`workid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of cb_work
 -- ----------------------------
 INSERT INTO `cb_work` VALUES ('2', '2', '5', null, '1', '全职', '研发部', '关注', '1', '55', '上海', '1年', '大专', '100万', 'admin@admin.com', '2016-04-20 16:37:49', '2016-04-20 16:37:49');
 INSERT INTO `cb_work` VALUES ('3', '2', '5', null, '2', '全职', '研发部', '关注', '1', '55', '上海', '1年', '大专', '100万', 'admin@admin.com', '2016-04-20 17:11:01', '2016-04-20 17:11:01');
+INSERT INTO `cb_work` VALUES ('4', '2', '55', '', '44', '77', '88', '888', '8', '8', '上海8', '8', '8', '8', 'admin@admin.com', '2016-05-17 17:32:27', '2016-05-17 17:32:27');

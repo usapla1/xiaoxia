@@ -1,0 +1,125 @@
+<block name="include"><include file="Public:header5" /></block>
+<body style="background-image:url('/newfish/Public/images/6.jpg')">
+<div id="body">
+    <div id="header">
+        <div class="wrapper">
+            <a class="logo" href="index.html">
+                <img width="229" height="56" alt="新安招聘" src="{:C('Base_Url')}images/logo.png">
+            </a>
+            <ul id="navheader" class="reset">
+                <li><a href="{:U('Index/index')}">首页</a></li>
+                <li class="current"><a rel="nofollow" href="{:U('User/index')}">个人中心</a></li>
+            </ul>
+            <dl class="collapsible_menu">
+                <dt>
+                    <span>{$user}&nbsp;</span>
+                    <span class="red dn" id="noticeDot-1"></span>
+                    <i></i>
+                </dt>
+                <dd><a rel="nofollow" href="Individual.html">我的简历</a></dd>
+                <dd style="display: none;"><a href="{:U('Index/index')}">我要找工作</a></dd>
+                <dd class="logout" style="display: none;"><a rel="nofollow" href="{:U('Index/logout')}">退出</a></dd>
+        </div>
+    </div><!-- end #header -->
+    <div id="container">
+        <div class="sidebar">
+            <dl class="company_center_aside">
+                <dt><h3>个人中心</h3></dt>
+                <dd><a href="{:U('User/index')}">个人信息</a></dd>
+                <dd><a href="{:U('Resume/index')}">我的简历</a></dd>
+                <dd><a href="{:U('User/apply')}">申请记录</a></dd>
+                <dd><a href="{:U('User/feedback')}">人事反馈</a></dd>
+            </dl>
+        </div><!-- end .sidebar -->
+        <div class="content">
+            <dl class="company_center_content">
+                <dt>
+                <h1>
+                    <em></em>
+                    我的更多详细信息
+                </h1>
+                </dt>
+                <dd>
+                    <!--表单提交简历-->
+                    <form action="{:U('Resume/editmore')}" method="post" id="jobForm">
+                            <table class="btm">
+                            <tbody>
+                            <tr>
+                            <td><span class="redstar">*</span></td>
+                            <td>教育经历</td>
+                            <!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
+                            <td>
+                            <textarea type="text" placeholder="请输入学校及最高学历，如：浙江财经大学，本科"  name="edu" id="education"></textarea>
+                            </td>
+                            </tr>
+                            <tr>
+                            <td></td>
+                            <td>获奖情况</td>
+                            <td>
+                            <textarea type="text" placeholder="如：2016/6/6获得优秀毕业设计；多项奖项请使用分号隔开"  name="reward" id="honors"></textarea>
+                            </td>
+                            </tr>
+                            </tbody>
+                            </table>
+
+                            <table class="btm">
+                            <tbody><tr>
+                            <td width="25"></td>
+                            <td width="85">工作经历</td>
+                            <td>
+                            <textarea type="text" placeholder="如：2015/6/6~2016/6/6 浙江新安化工集团 会计(实习)；多段工作经历请使用分号隔开" value="{$list.work}" name="work" id="experience"></textarea>
+                            </td>
+                            </tr>
+                            <tr>
+                            <td><span class="redstar">*</span></td>
+                            <td>掌握技能</td>
+                            <td>
+                            <textarea type="text" placeholder="如：C;C++;Java;Word多段工作经历请使用分号隔开" value="{$list.skill}" name="skill" id="skill"></textarea>
+                            </td>
+                            </tr>
+                            </tbody>
+                            </table>
+
+                            <table class="btm">
+                            <tbody><tr>
+                            <td width="25"><span class="redstar">*</span></td>
+                            <td width="85">自我评价</td>
+                            <td>
+                            <textarea type="text" placeholder="20字描述自己的优点" value="{$list.selftalk}" name="selftalk" id="selftalk" class="input_520" id="point"></textarea>
+                            </td>
+                            </tr>
+                            <tr>
+                            <td><span class="redstar">*</span></td>
+                            <td>职业规划</td>
+                            <td>
+                            <textarea type="text" placeholder="描述自己以后的职业目标" value="{$list.hopework}" name="hopework" id="hopework" class="input_520" id="target"></textarea>
+                            </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td >
+                                    <input type="submit" value="保存" id="jobPreview" class="btn_32">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </dd>
+            </dl>
+        </div><!-- end .content -->
+        <div class="clear"></div>
+        <a rel="nofollow" title="回到顶部" id="backtop" style="display: none;"></a>
+    </div><!-- end #container -->
+</div><!-- end #body -->
+<script language="javascript">
+    document.getElementById('education').innerHTML='{$list.edu}';
+    document.getElementById('honors').innerHTML='{$list.reward}';
+    document.getElementById('experience').innerHTML='{$list.work}';
+    document.getElementById('skill').innerHTML='{$list.skill}';
+    document.getElementById('selftalk').innerHTML='{$list.selftalk}';
+    document.getElementById('hopework').innerHTML='{$list.hopework}';
+</script>
+<block name="include"><include file="Public:footer2" /></block>

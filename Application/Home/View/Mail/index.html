@@ -59,7 +59,13 @@
           <table> 
             <tbody>
             <tr>
-                <td colspan="2"> 职位名称 <input type="text" value="{$worktitle}" id="mailContent" name="workname" />
+                <td colspan="2"> 职位名称 <input type="text" value="{$worktitle.work_title}" id="mailContent" name="workname" />
+            </tr>
+            <tr>
+                <td colspan="2"> 面试地点 <input type="text" value="{$worktitle.workaddress}" id="mailContent" name="workaddress" />
+            </tr>
+            <tr>
+                <td colspan="2"> 面试时间 <input type="date"  id="mailContent" name="date" />
             </tr>
               <tr>
                 <td colspan="2"> 接受邀请邮箱 <input type="text" value="{$email}" id="invitEmail" name="invitEmail" />
@@ -70,8 +76,8 @@
               <tr>
                   <td colspan="2"> 标题 <input type="text" value="" id="mailContent" name="title" />
               </tr>
-              <tr> 
-                <td colspan="2"> 内容 <input type="text" value="" id="mailContent" name="content" />
+              <tr>
+                <td colspan="2"> 内容 <textarea type="text" value="" id="mailContent" name="content" /></textarea></td>
                     <input type="hidden" value="{$seekid}"  name="seekid" />
               </tr>
               <tr>

@@ -25,8 +25,8 @@ class MailController extends Controller{
 		$map = array();
 		$map['cb_seek.seekid'] = $seekid;
 		$Seek = M('Seek');
-		$worktitle = $Seek->join('cb_work ON cb_seek.workid = cb_work.workid')->where($map)->field('cb_work.work_title,cb_seek.seekid')->find();
-		$worktitle = $worktitle['work_title'];
+		$worktitle = $Seek->join('cb_work ON cb_seek.workid = cb_work.workid')->where($map)->find();
+		//$worktitle = $worktitle['work_title'];
 		$user = $_SESSION['username'];
 		$this->assign('user',$user);
 		$this->assign('username',$username);
@@ -97,10 +97,13 @@ class MailController extends Controller{
 		$data = array();
 		$data['workname'] = I('workname');
 		$data['username'] = I('username');
+		$data['workaddress'] = I('workaddress');
+		$data['date'] = I('date');
 		$data['mail'] = I('mail');
 		$data['title'] = I('title');
 		$data['content'] = I('content');
 		$data['add_time'] = date('Y-m-d H:i:s',time());
+
 		$MailsmsDao = M('Mailsms');
 		$result = $MailsmsDao->add($data);
 		$SeekDao = M('Seek');

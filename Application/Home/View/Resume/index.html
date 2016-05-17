@@ -42,16 +42,12 @@
 				<dd>
 					<!--表单提交简历-->
 					<form action="{:U('Resume/edit')}" method="post" id="jobForm">
-						<input type="hidden" value="" name="id">
-						<input type="hidden" value="create" name="preview">
-						<input type="hidden" value="25927" name="companyId">
-						<input type="hidden" value="c29d4a7c35314180bf3be5eb3f00048f" name="resubmitToken">
 						<table class="btm">
 							<tbody><tr>
 								<td width="25"><span class="redstar">*</span></td>
 								<td>姓名</td>
 								<td>
-									<input type="text" placeholder="5555：男" value="{$list.username}" name="name" id="tName" readonly>
+									<input type="text" placeholder="5555：男" value="{$list.username}" name="name" id="tName" >
 								</td>
 							</tr>
 							<tr>
@@ -100,24 +96,24 @@
 								<td><span class="redstar">*</span></td>
 								<td>手机号码</td>
 								<td>
-									<input type="text" placeholder="请输入手机号码" value="{$list.telphone}" name="telphone" id="phoneNumber" readonly>
+									<input type="text" placeholder="请输入手机号码" value="{$list.telphone}" name="telphone" id="phoneNumber" >
 								</td>
 							</tr>
 							<tr>
 								<td><span class="redstar">*</span></td>
 								<td>邮箱</td>
 								<td>
-									<input type="text" placeholder="请输入可用邮箱" value="{$list.email}" name="email" id="mailaddress" readonly>
+									<input type="text" placeholder="请输入可用邮箱" value="{$list.email}" name="email" id="mailaddress" >
 								</td>
 							</tr>
 							</tbody></table>
 
-						<table class="btm">
+<!--						<table class="btm">
 							<tbody>
 							<tr>
 								<td><span class="redstar">*</span></td>
 								<td>教育经历</td>
-								<!--<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> -->
+								&lt;!&ndash;<h3><span>(最高月薪不能大于最低月薪的2倍)</span></h3> &ndash;&gt;
 								<td>
 									<input type="text" placeholder="请输入学校及最高学历，如：浙江财经大学，本科" value="{$list.edu}" name="edu" id="education">
 								</td>
@@ -129,7 +125,8 @@
 									<input type="text" placeholder="如：2016/6/6获得优秀毕业设计；多项奖项请使用分号隔开" value="{$list.reward}" name="reward" id="honors">
 								</td>
 							</tr>
-							</tbody></table>
+							</tbody>
+						</table>
 
 						<table class="btm">
 							<tbody><tr>
@@ -146,7 +143,8 @@
 									<input type="text" placeholder="如：C;C++;Java;Word多段工作经历请使用分号隔开" value="{$list.skill}" name="skill" id="skill">
 								</td>
 							</tr>
-							</tbody></table>
+							</tbody>
+						</table>
 
 						<table class="btm">
 							<tbody><tr>
@@ -163,7 +161,8 @@
 									<input type="text" placeholder="描述自己以后的职业目标" value="{$list.hopework}" name="hopework" class="input_520" id="target">
 								</td>
 							</tr>
-							</tbody></table>
+							</tbody>
+						</table>-->
 
 						<table>
 							<tbody><tr>
@@ -171,14 +170,6 @@
 								<td colspan="2">
 									接收简历邮箱：
 									<input type="text" value="{$list.email}" id="receiveEmail" name="email">
-								</td>
-							</tr>
-							<tr>
-								<td width="25"></td>
-								<td colspan="2">
-									同时简历自动发送至邮箱（仅一个）
-									<input type="text" value="" id="forwardEmail" name="forwardEmail">
-									<!-- <span class="error" id="beError" style="display:none"></span> -->
 								</td>
 							</tr>
 							<tr>

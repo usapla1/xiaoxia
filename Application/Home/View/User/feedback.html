@@ -42,10 +42,13 @@
 			    <ul class="reset my_jobs">
 					<volist name="list" id="vo">
 				    <li data-id="149594">
-		                <h3>{$vo.title}<span>[职位名：{$vo.workname}]</span></h3>
+		                <h3>{$vo.title}</h3>
 		                <span class="receivedResumeNo">
 							人事查看了您投递的简历,并发出面试邀请
 						</span>
+						<div class="c9">职位名： {$vo.workname}</div>
+						<div class="c9">面试地点： {$vo.workaddress}</div>
+						<div class="c9">面试时间： {$vo.date}</div>
 						<div class="c9">内容： {$vo.content}</div>
 		                <div class="c9">发送时间： {$vo.add_time}</div>
 						<div class="links">
